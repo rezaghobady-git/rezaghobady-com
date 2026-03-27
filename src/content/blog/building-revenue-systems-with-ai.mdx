@@ -1,0 +1,23 @@
+---
+title: "Building Revenue Systems with AI — What Actually Works"
+date: "2026-03-10"
+category: "AI"
+description: "Most AI automation projects fail at the same point: the handoff between systems. Here is what I have learned building revenue infrastructure for service businesses."
+draft: false
+---
+
+Most AI automation projects fail at the same point: the handoff between systems.
+
+You can build a lead capture system that works perfectly in isolation. You can build a follow-up sequence that converts well on its own. But the moment you try to connect them — to make one system feed the next automatically — you run into the problem that nobody talks about: context collapse.
+
+The lead capture system knows the prospect's name, company, and what they clicked on. The follow-up sequence knows none of this. And so you get a personalized first email followed by a generic sequence, and the whole thing falls apart.
+
+The solution is not more AI. It is better data architecture.
+
+Before building any automation, I now spend time mapping what information needs to travel between steps, and in what format. This sounds obvious. It is not. Most tools make it easy to connect triggers and actions, and hard to think about the data that flows between them.
+
+At KaavOps, we have built this layer using n8n as the orchestration backbone, with structured JSON objects passing context between every node. Every lead that enters the system carries a context object that gets enriched at each step — never replaced, always added to.
+
+The result is sequences that feel personal throughout, not just at the start.
+
+This is the unglamorous part of AI automation. The part that does not make for interesting demos. But it is the part that determines whether the system runs for six months without touching it, or breaks in three weeks.

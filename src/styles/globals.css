@@ -1,0 +1,274 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;400;500&family=JetBrains+Mono:wght@400&display=swap');
+
+/* Tailwind v4 */
+@import "tailwindcss";
+
+/* Design Tokens — CSS Variables */
+:root {
+  /* Backgrounds */
+  --color-bg:            #F9F8F6;
+  --color-surface:       #FFFFFF;
+  --color-surface-muted: #F1F0EE;
+
+  /* Text */
+  --color-text-primary:   #111110;
+  --color-text-secondary: #4A4A45;
+  --color-text-muted:     #9A9A94;
+
+  /* Accent */
+  --color-accent:      #1A1A1A;
+  --color-accent-warm: #C8A882;
+
+  /* Borders */
+  --color-border:        #E5E4E0;
+  --color-border-strong: #2A2A28;
+}
+
+/* Tailwind v4 Theme — maps CSS vars to utility classes */
+@theme inline {
+  /* Colors */
+  --color-bg:            var(--color-bg);
+  --color-surface:       var(--color-surface);
+  --color-surface-muted: var(--color-surface-muted);
+
+  --color-text-primary:   var(--color-text-primary);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-text-muted:     var(--color-text-muted);
+
+  --color-accent:      var(--color-accent);
+  --color-accent-warm: var(--color-accent-warm);
+
+  --color-border:        var(--color-border);
+  --color-border-strong: var(--color-border-strong);
+
+  /* Typography */
+  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-sans:  'DM Sans', system-ui, sans-serif;
+  --font-mono:  'JetBrains Mono', monospace;
+}
+
+/* Base Styles */
+html {
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--color-bg);
+  min-height: 100vh;
+}
+
+/* Typography Scale */
+h1, h2 {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--color-text-primary);
+}
+
+h3, h4, h5, h6 {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+p {
+  color: var(--color-text-secondary);
+  max-width: 65ch;
+}
+
+/* Utility Classes */
+.label {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--color-accent);
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  border-radius: 0;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-border-strong);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  background-color: transparent;
+  color: var(--color-accent);
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 0;
+  border: 1px solid var(--color-accent);
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-accent);
+  color: #ffffff;
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  background: none;
+  border: none;
+  color: var(--color-text-secondary);
+  text-underline-offset: 4px;
+  cursor: pointer;
+  padding: 0;
+  font-size: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.btn-ghost:hover {
+  text-decoration: underline;
+  color: var(--color-text-primary);
+}
+
+/* Contact email link */
+.contact-email-link {
+  color: var(--color-text-primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+
+.contact-email-link:hover {
+  color: var(--color-accent-warm);
+}
+
+/* Blog post row hover */
+.post-row {
+  text-decoration: none;
+  transition: border-color 0.2s;
+}
+
+.post-row:hover .post-title {
+  color: var(--color-accent-warm);
+}
+
+/* Venture card hover */
+.venture-card {
+  transition: border-color 0.2s;
+}
+
+.venture-card:hover {
+  border-color: var(--color-border-strong) !important;
+}
+
+.venture-name-link {
+  color: var(--color-text-primary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.venture-name-link:hover {
+  color: var(--color-accent-warm);
+}
+
+/* Nav helpers */
+.nav-transparent {
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
+}
+
+.nav-scrolled {
+  background-color: rgba(249, 248, 246, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.nav-logo {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 0.875rem;
+  letter-spacing: 0.025em;
+  color: var(--color-text-primary);
+  text-decoration: none;
+}
+
+.nav-link {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: var(--color-text-primary);
+}
+
+.nav-mobile-menu {
+  background-color: var(--color-bg);
+  border-top: 1px solid var(--color-border);
+}
+
+/* Footer helpers */
+.footer-muted {
+  color: var(--color-text-muted);
+}
+
+.footer-link-primary {
+  color: var(--color-text-primary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-link-muted {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-link-primary:hover,
+.footer-link-muted:hover {
+  color: var(--color-text-primary);
+}
+
+/* Prose container */
+.prose-reza {
+  max-width: 65ch;
+}
+
+.prose-reza p {
+  margin-bottom: 1.5rem;
+  line-height: 1.75;
+}
+
+.prose-reza h2 {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  font-size: 2.25rem;
+}
+
+.prose-reza h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+}
