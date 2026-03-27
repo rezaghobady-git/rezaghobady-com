@@ -152,6 +152,40 @@ p {
   color: var(--color-text-primary);
 }
 
+/* Contact form inputs */
+.contact-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 0.875rem;
+  color: var(--color-text-primary);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 0;
+  outline: none;
+  transition: border-color 0.2s;
+  -webkit-appearance: none;
+}
+
+.contact-input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.contact-input:focus {
+  border-color: var(--color-accent);
+}
+
+/* Contact direct links */
+.contact-direct-link {
+  color: var(--color-text-primary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.contact-direct-link:hover {
+  color: var(--color-accent-warm);
+}
+
 /* About page external link */
 .about-external-link {
   color: var(--color-text-muted);
