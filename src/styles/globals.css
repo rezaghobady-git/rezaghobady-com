@@ -152,6 +152,17 @@ p {
   color: var(--color-text-primary);
 }
 
+/* About page external link */
+.about-external-link {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.about-external-link:hover {
+  color: var(--color-text-primary);
+}
+
 /* Contact email link */
 .contact-email-link {
   color: var(--color-text-primary);
