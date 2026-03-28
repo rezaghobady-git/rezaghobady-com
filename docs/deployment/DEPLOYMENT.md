@@ -6,26 +6,60 @@
 
 ## Hosting Setup
 
-**Provider:** Hostinger VPS  
-**Domain:** rezaghobady.com (managed via Hostinger)  
-**Strategy:** Build locally or via GitHub Actions → deploy to Hostinger VPS via SSH  
-**Node version:** 20.x LTS
+**Provider:** Vercel (Hobby plan)
+**Domain:** rezaghobady.com (DNS managed via Hostinger)
+**Strategy:** Push to `main` → Vercel detects the push → builds and deploys automatically
+**Node version:** 20.x LTS (Vercel default)
 
 ---
 
 ## Deployment Architecture
 
 ```
-GitHub (main branch)
-    ↓ push triggers
-GitHub Actions (CI/CD)
-    ↓ builds Next.js
-Hostinger VPS (Ubuntu)
-    ↓ serves via
-PM2 + Nginx (reverse proxy)
+git push origin main
+    ↓ Vercel GitHub integration detects push
+Vercel build servers
+    ↓ npm ci → npm run build
+Vercel Edge Network
+    ↓ serves globally
+rezaghobady.com
 ```
 
-Next.js runs as a Node.js process managed by PM2. Nginx sits in front and handles HTTPS, compression, and routing.
+No workflow file needed. Vercel handles everything via its GitHub App.
+
+---
+
+## First-Time Setup (One-Time)
+
+### 1. Connect repo to Vercel
+
+1. Go to [vercel.com](https://vercel.com) and sign in with GitHub
+2. Click **Add New → Project**
+3. Import `rezaghobady-com` from GitHub
+4. Framework preset will auto-detect as **Next.js** — leave all defaults
+5. Add environment variable: `NEXT_PUBLIC_SITE_URL` = `https://rezaghobady.com`
+6. Click **Deploy**
+
+First deploy takes ~2 minutes. Every subsequent push to `main` deploys automatically.
+
+### 2. Add custom domain
+
+In Vercel project → **Settings → Domains**:
+
+1. Add `rezaghobady.com`
+2. Add `www.rezaghobady.com`
+3. Vercel will show you the DNS records to add
+
+### 3. Update DNS in Hostinger
+
+In Hostinger hPanel → **Domains → DNS Zone**, update or add:
+
+| Type | Name | Value |
+|---|---|---|
+| `A` | `@` | `76.76.21.21` |
+| `CNAME` | `www` | `cname.vercel-dns.com` |
+
+DNS propagation takes 1–48 hours. SSL is provisioned automatically by Vercel once DNS resolves.
 
 ---
 
@@ -42,180 +76,48 @@ NEXT_PUBLIC_SITE_URL=https://rezaghobady.com
 # NEXT_PUBLIC_GA_ID=        ← For Google Analytics (optional)
 ```
 
-On the VPS, set these in `/etc/environment` or via PM2 ecosystem file.
+To add variables to production, go to Vercel project → **Settings → Environment Variables**.
 
 ---
 
-## GitHub Actions Workflow
+## Branch Behaviour on Vercel
 
-Create `.github/workflows/deploy.yml`:
-
-```yaml
-name: Deploy to Hostinger VPS
-
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build
-        run: npm run build
-        env:
-          NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
-
-      - name: Deploy to VPS
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.VPS_HOST }}
-          username: ${{ secrets.VPS_USER }}
-          key: ${{ secrets.VPS_SSH_KEY }}
-          script: |
-            cd /var/www/rezaghobady
-            git pull origin main
-            npm ci --production
-            npm run build
-            pm2 restart rezaghobady
-```
-
-### Required GitHub Secrets
-
-Set these in `GitHub → Repo Settings → Secrets and variables → Actions`:
-
-| Secret | Value |
+| Branch | What Vercel does |
 |---|---|
-| `VPS_HOST` | Your Hostinger VPS IP address |
-| `VPS_USER` | SSH username (e.g. `root` or `ubuntu`) |
-| `VPS_SSH_KEY` | Your private SSH key content |
-| `NEXT_PUBLIC_SITE_URL` | `https://rezaghobady.com` |
+| `main` | Production deploy → rezaghobady.com |
+| `dev` | Preview deploy → random-hash.vercel.app |
+| Any `feat/*` | Preview deploy → random-hash.vercel.app |
 
----
-
-## VPS Setup (One-Time)
-
-SSH into your Hostinger VPS and run:
-
-```bash
-# Install Node.js 20
-curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
-sudo apt-get install -y nodejs
-
-# Install PM2 globally
-npm install -g pm2
-
-# Install Nginx
-sudo apt install nginx
-
-# Clone your repo
-mkdir -p /var/www/rezaghobady
-cd /var/www/rezaghobady
-git clone https://github.com/YOUR_USERNAME/rezaghobady-website.git .
-
-# Build and start
-npm ci
-npm run build
-pm2 start npm --name "rezaghobady" -- start
-pm2 save
-pm2 startup
-```
-
----
-
-## Nginx Configuration
-
-```nginx
-# /etc/nginx/sites-available/rezaghobady.com
-server {
-    listen 80;
-    server_name rezaghobady.com www.rezaghobady.com;
-    return 301 https://$host$request_uri;
-}
-
-server {
-    listen 443 ssl;
-    server_name rezaghobady.com www.rezaghobady.com;
-
-    ssl_certificate /etc/letsencrypt/live/rezaghobady.com/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/rezaghobady.com/privkey.pem;
-
-    location / {
-        proxy_pass http://localhost:3000;
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection 'upgrade';
-        proxy_set_header Host $host;
-        proxy_cache_bypass $http_upgrade;
-    }
-}
-```
-
-Enable with:
-```bash
-sudo ln -s /etc/nginx/sites-available/rezaghobady.com /etc/nginx/sites-enabled/
-sudo nginx -t
-sudo systemctl reload nginx
-```
-
----
-
-## SSL Certificate (Let's Encrypt)
-
-```bash
-sudo apt install certbot python3-certbot-nginx
-sudo certbot --nginx -d rezaghobady.com -d www.rezaghobady.com
-```
-
-Certbot auto-renews. Verify with: `sudo certbot renew --dry-run`
-
----
-
-## DNS Configuration (Hostinger)
-
-In Hostinger DNS settings, point:
-
-| Type | Name | Value |
-|---|---|---|
-| A | @ | Your VPS IP |
-| A | www | Your VPS IP |
-| CNAME | www | rezaghobady.com |
-
----
-
-## PM2 Commands (Common)
-
-```bash
-pm2 list                    # See all processes
-pm2 logs rezaghobady        # Tail logs
-pm2 restart rezaghobady     # Restart app
-pm2 stop rezaghobady        # Stop app
-pm2 monit                   # Live monitoring
-```
+Preview deploys are useful for reviewing changes before merging to `main`. Each one gets a unique URL you can share.
 
 ---
 
 ## Pre-Deploy Checklist
 
-Claude Code must run through this before every deploy to `main`:
+Claude Code must run through this before every merge to `main`:
 
 - [ ] `npm run build` passes with no errors
 - [ ] `npm run lint` passes
 - [ ] `.env.local` is not committed (check `.gitignore`)
 - [ ] All pages have metadata defined
-- [ ] `/public/og-image.jpg` exists
 - [ ] No hardcoded `localhost` URLs in the codebase
+
+---
+
+## Rollbacks
+
+If a deploy breaks something, roll back instantly in Vercel dashboard:
+
+**Project → Deployments → find previous deploy → ··· → Promote to Production**
+
+---
+
+## Future: Adding Resend (Contact Form)
+
+When ready to activate the contact form email:
+
+1. Sign up at [resend.com](https://resend.com) — free tier is 3,000 emails/month
+2. Get your API key
+3. In Vercel: **Settings → Environment Variables** → add `RESEND_API_KEY`
+4. Uncomment the Resend block in `src/app/contact/actions.ts`
+5. Push to `main` — Vercel redeploys automatically
