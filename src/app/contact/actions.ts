@@ -28,14 +28,14 @@ export async function submitContact(
 
   const { error } = await resend.emails.send({
     from: "contact@rezaghobady.com",
-    to: "reza@rezaghobady.com",
+    to: "moi@rezaghobady.com",
     replyTo: email,
     subject: `Message from ${name}`,
     text: `From: ${name} <${email}>\n\n${message}`,
   });
 
   if (error) {
-    return { status: "error", message: "Failed to send — please email me directly at reza@rezaghobady.com." };
+    return { status: "error", message: "Failed to send — please email me directly at moi@rezaghobady.com." };
   }
 
   return { status: "success" };

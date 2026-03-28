@@ -10,8 +10,8 @@ export const metadata: Metadata = {
 const links = [
   {
     label: "Email",
-    value: "reza@rezaghobady.com",
-    href: "mailto:reza@rezaghobady.com",
+    value: "moi@rezaghobady.com",
+    href: "mailto:moi@rezaghobady.com",
     external: false,
   },
   {

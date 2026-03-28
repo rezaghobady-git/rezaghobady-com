@@ -28,10 +28,10 @@ export default function ContactCTASection() {
             about KaavOps or Simine Paris, or just want to connect —
             I&apos;m reachable at{" "}
             <a
-              href="mailto:reza@rezaghobady.com"
+              href="mailto:moi@rezaghobady.com"
               className="contact-email-link"
             >
-              reza@rezaghobady.com
+              moi@rezaghobady.com
             </a>
             . I reply to every message.
           </p>
