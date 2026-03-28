@@ -24,18 +24,32 @@ export async function submitContact(
     return { status: "error", message: "Please enter a valid email address." };
   }
 
-  const resend = new Resend(process.env.RESEND_API_KEY);
+  try {
+    const resend = new Resend(process.env.RESEND_API_KEY);
 
-  const { error } = await resend.emails.send({
-    from: "contact@rezaghobady.com",
-    to: "moi@rezaghobady.com",
-    replyTo: email,
-    subject: `Message from ${name}`,
-    text: `From: ${name} <${email}>\n\n${message}`,
-  });
+    const { error } = await resend.emails.send({
+      from: "contact@rezaghobady.com",
+      to: "moi@rezaghobady.com",
+      replyTo: email,
+      subject: `Message from ${name}`,
+      text: `From: ${name} <${email}>\n\n${message}`,
+    });
 
-  if (error) {
-    return { status: "error", message: "Failed to send — please email me directly at moi@rezaghobady.com." };
+    if (error) {
+      console.error("Resend error:", error);
+      return {
+        status: "error",
+        message:
+          "Failed to send — please email me directly at moi@rezaghobady.com.",
+      };
+    }
+  } catch (err) {
+    console.error("Contact form exception:", err);
+    return {
+      status: "error",
+      message:
+        "Failed to send — please email me directly at moi@rezaghobady.com.",
+    };
   }
 
   return { status: "success" };
