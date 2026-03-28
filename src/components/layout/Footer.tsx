@@ -3,7 +3,7 @@ import Link from "next/link";
 const footerLinks = [
   { href: "/about", label: "About" },
   { href: "/blog", label: "Blog" },
-  { href: "/courses", label: "Courses" },
+  { href: "/services", label: "Services" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -29,7 +29,7 @@ export default function Footer() {
               Reza Ghobady
             </Link>
             <p className="mt-2 text-sm footer-muted">
-              Paris — Entrepreneur, builder, gallery founder.
+              Paris — AI systems for service businesses. Gallery founder.
             </p>
           </div>
 

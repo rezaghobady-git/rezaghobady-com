@@ -1,6 +1,6 @@
-import Link from "next/link";
+import NewsletterForm from "@/components/ui/NewsletterForm";
 
-export default function ContactCTASection() {
+export default function NewsletterSection() {
   return (
     <section className="py-20 md:py-32 px-6 md:px-10">
       <div className="mx-auto max-w-3xl">
@@ -9,7 +9,7 @@ export default function ContactCTASection() {
           style={{ borderColor: "var(--color-border-strong)" }}
         >
           <p className="label" style={{ color: "var(--color-text-muted)" }}>
-            — Let&apos;s talk
+            — Newsletter
           </p>
           <h2
             className="mt-4 text-3xl md:text-4xl"
@@ -30,22 +30,24 @@ export default function ContactCTASection() {
           >
             Start here.
           </p>
+
           <p
             className="mt-6 text-sm leading-relaxed"
             style={{ color: "var(--color-text-secondary)", maxWidth: "48ch" }}
           >
-            Whether you are interested in working together, have a question
-            about KaavOps or Simine Paris, or just want to connect —
-            I reply to every message.
+            I write about systems thinking, AI automation, and building
+            businesses that don&apos;t depend on you being available. No
+            frequency promises — only when I have something useful to say.
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-4">
-            <Link href="/services" className="btn-primary">
-              Work with KaavOps
-            </Link>
-            <Link href="/contact" className="btn-secondary">
-              Get in touch
-            </Link>
+          <div className="mt-8">
+            <NewsletterForm />
+            <p
+              className="mt-3 text-xs"
+              style={{ color: "var(--color-text-muted)" }}
+            >
+              No spam. Unsubscribe any time.
+            </p>
           </div>
         </div>
       </div>

@@ -9,7 +9,7 @@ export default function HeroSection() {
           — Paris
         </p>
 
-        {/* Name */}
+        {/* Main headline */}
         <h1
           className="mt-6 text-5xl md:text-6xl leading-none tracking-tight"
           style={{
@@ -17,40 +17,40 @@ export default function HeroSection() {
             color: "var(--color-text-primary)",
           }}
         >
-          Reza Ghobady
+          Simplify your thinking.
+          <br />
+          Build systems.
         </h1>
 
-        {/* One-line descriptor */}
+        {/* Sub-headline */}
         <p
-          className="mt-6 text-xl md:text-2xl leading-snug"
+          className="mt-4 text-2xl md:text-3xl leading-snug"
           style={{
             fontFamily: "var(--font-serif)",
             fontStyle: "italic",
             color: "var(--color-text-secondary)",
-            maxWidth: "none",
           }}
         >
-          Entrepreneur building at the intersection of AI, automation, and
-          contemporary art.
+          Let them run your business.
         </p>
 
-        {/* Bio */}
+        {/* Body */}
         <p
           className="mt-8 text-base leading-relaxed"
           style={{ color: "var(--color-text-secondary)", maxWidth: "52ch" }}
         >
+          I design AI-powered revenue systems for agencies and B2B service
+          businesses — so founders can focus on the work only they can do.
           Based in Paris. Founder of KaavOps and Simine Paris.
-          <br className="hidden md:block" />I design systems that replace
-          manual work, and spaces that make art matter.
         </p>
 
         {/* CTAs */}
         <div className="mt-10 flex flex-wrap gap-4">
-          <Link href="/about" className="btn-primary">
-            About me
+          <Link href="/services" className="btn-primary">
+            Work with KaavOps
           </Link>
-          <Link href="/blog" className="btn-secondary">
-            Read my writing
+          <Link href="/about" className="btn-secondary">
+            About me
           </Link>
         </div>
       </div>

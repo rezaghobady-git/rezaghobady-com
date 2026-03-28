@@ -90,14 +90,14 @@ export default async function BlogIndex({ searchParams }: BlogIndexProps) {
               color: "var(--color-text-primary)",
             }}
           >
-            Essays &amp; notes
+            This is where I think in public.
           </h1>
           <p
             className="mt-5 text-base leading-relaxed"
             style={{ color: "var(--color-text-secondary)", maxWidth: "48ch" }}
           >
-            On AI automation, contemporary art, business systems, and the tools
-            I use to build both.
+            Essays and notes on AI automation, systems thinking, contemporary
+            art, and the specific kind of business problems I find interesting.
           </p>
 
           {/* Category filter */}

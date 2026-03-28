@@ -15,17 +15,29 @@ const tools = [
   { name: "Notion", role: "Reference & documentation" },
 ];
 
-const interests = [
-  { label: "AI & automation", body: "Not as a trend — as infrastructure. I am interested in how systems can take repetitive cognitive work off human plates entirely." },
-  { label: "Contemporary art", body: "Particularly the relationship between cultural production and political context. Iranian contemporary art is the specific area where I have built sustained knowledge." },
-  { label: "Business models", body: "How businesses actually make money, and why most automation projects fail to connect to revenue. The gap between a useful system and a profitable one is usually a design problem." },
-  { label: "Persian history & culture", body: "A personal and ongoing education — roots, language, literature, and how a civilization talks to the present tense." },
+const beliefs = [
+  {
+    label: "Complexity is usually a design failure.",
+    body: "When a business feels hard to run, the problem is almost never effort. It is architecture. The right systems make simple work of things that currently require constant attention.",
+  },
+  {
+    label: "Depth over speed, always.",
+    body: "I would rather understand a problem completely than ship a solution quickly that solves the wrong thing. This applies equally to a client automation audit and to a curatorial decision at Simine Paris.",
+  },
+  {
+    label: "Solo is a legitimate operating model.",
+    body: "Both businesses run without employees. This is a deliberate choice. It forces clarity about what actually matters and what is just noise. Systems do what people would otherwise repeat.",
+  },
+  {
+    label: "Context is not a footnote.",
+    body: "In automation: the difference between a useful system and a profitable one is usually a design problem, not a technology problem. In art: the political and social pressures Iranian artists work under are not background — they are part of what the work is doing.",
+  },
 ];
 
 export default function AboutPage() {
   return (
     <>
-      {/* ── Hero ── */}
+      {/* ── Opening ── */}
       <section className="py-20 md:py-32 px-6 md:px-10">
         <div className="mx-auto max-w-3xl">
           <p className="label" style={{ color: "var(--color-text-muted)" }}>
@@ -54,9 +66,9 @@ export default function AboutPage() {
             <p>
               At Simine Paris, I run a contemporary art gallery focused on
               Iranian artists. We organize exhibitions in Paris and
-              internationally, and believe strongly that Iranian contemporary art
-              belongs at the center of Europe&apos;s cultural conversation — not at
-              its margins.
+              internationally, and believe that Iranian contemporary art belongs
+              at the center of Europe&apos;s cultural conversation — not at its
+              margins.
             </p>
             <p>
               I work solo, move deliberately, and prefer depth over speed.
@@ -65,14 +77,14 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── Ventures ── */}
+      {/* ── Story ── */}
       <section
         className="py-20 md:py-32 px-6 md:px-10"
         style={{ backgroundColor: "var(--color-surface-muted)" }}
       >
         <div className="mx-auto max-w-3xl">
           <p className="label" style={{ color: "var(--color-text-muted)" }}>
-            — Ventures
+            — Story
           </p>
           <h2
             className="mt-3 text-3xl md:text-4xl"
@@ -81,149 +93,119 @@ export default function AboutPage() {
               color: "var(--color-text-primary)",
             }}
           >
-            What I run
+            How I got here
           </h2>
 
-          {/* KaavOps */}
-          <div
-            className="mt-12 pt-8 border-t"
-            style={{ borderColor: "var(--color-border)" }}
-          >
-            <div className="flex items-baseline justify-between gap-4 flex-wrap">
-              <h3
-                className="text-2xl font-normal"
-                style={{
-                  fontFamily: "var(--font-serif)",
-                  color: "var(--color-text-primary)",
-                }}
-              >
-                KaavOps
-              </h3>
-              <a
-                href="https://kaavops.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="label about-external-link"
-              >
-                kaavops.com ↗
-              </a>
-            </div>
-            <p
-              className="mt-1 label"
-              style={{ color: "var(--color-accent-warm)" }}
-            >
-              AI Automation Agency · Paris &amp; Europe
-            </p>
-            <div
-              className="mt-5 flex flex-col gap-4 text-sm leading-relaxed"
-              style={{ color: "var(--color-text-secondary)" }}
-            >
-              <p>
-                KaavOps designs revenue infrastructure for agencies and B2B
-                service providers. The core problem: most service businesses
-                are built around manual, founder-dependent revenue processes.
-                Lead generation runs on personal network. Follow-up happens
-                when someone remembers. Client onboarding depends on whoever
-                has the most context that week.
-              </p>
-              <p>
-                We replace these processes with automated systems — built on
-                n8n, connected to CRMs and outreach tools, and designed to run
-                continuously without human intervention. The result is not just
-                efficiency. It is predictability. Clients know their pipeline
-                is working even when they are not looking at it.
-              </p>
-              <p>
-                We work across France and Europe, primarily with founders who
-                have already found product-market fit and need infrastructure
-                to match their ambition.
-              </p>
-            </div>
-          </div>
-
-          {/* Simine Paris */}
-          <div
-            className="mt-12 pt-8 border-t"
-            style={{ borderColor: "var(--color-border)" }}
-          >
-            <h3
-              className="text-2xl font-normal"
-              style={{
-                fontFamily: "var(--font-serif)",
-                color: "var(--color-text-primary)",
-              }}
-            >
-              Simine Paris
-            </h3>
-            <p
-              className="mt-1 label"
-              style={{ color: "var(--color-accent-warm)" }}
-            >
-              Contemporary Art Gallery · Paris
-            </p>
-            <div
-              className="mt-5 flex flex-col gap-4 text-sm leading-relaxed"
-              style={{ color: "var(--color-text-secondary)" }}
-            >
-              <p>
-                Simine Paris is a gallery with a focused thesis: Iranian
-                contemporary art deserves a permanent, serious presence in
-                Europe&apos;s cultural conversation — not a periodic appearance at
-                the margins.
-              </p>
-              <p>
-                We organize exhibitions in Paris and internationally, working
-                directly with artists on programs that make a genuine argument
-                rather than simply presenting work. Context matters. The
-                political and social pressures Iranian artists work under are
-                not footnotes — they are part of what the work is doing.
-              </p>
-              <p>
-                The gallery serves two audiences simultaneously: collectors and
-                institutions who want to engage seriously with this tradition,
-                and broader publics who encounter this work for the first time.
-                We try to serve both without condescending to either.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── How I Work ── */}
-      <section className="py-20 md:py-32 px-6 md:px-10">
-        <div className="mx-auto max-w-3xl">
-          <p className="label" style={{ color: "var(--color-text-muted)" }}>
-            — Method
-          </p>
-          <h2
-            className="mt-3 text-3xl md:text-4xl"
-            style={{
-              fontFamily: "var(--font-serif)",
-              color: "var(--color-text-primary)",
-            }}
-          >
-            How I work
-          </h2>
           <div
             className="mt-8 flex flex-col gap-4 text-sm leading-relaxed"
             style={{ color: "var(--color-text-secondary)" }}
           >
             <p>
-              Solo. Both businesses run without employees. This is a deliberate
-              choice, not a constraint — it forces clarity about what actually
-              matters and what is just noise. Systems do what people would
-              otherwise repeat.
+              Iranian roots, Paris life. I have been based in France long enough
+              for it to be home, and connected to Iran closely enough for it to
+              remain essential. Both inform the work — the precision and
+              restraint of French professional culture, and the depth and weight
+              of Persian intellectual tradition.
             </p>
             <p>
-              Tools-forward. I build with what works, not with what is
-              fashionable. The stack is stable, well-understood, and chosen
-              because each tool does one thing well.
+              My background is in business and the art world, not engineering. I
+              am self-taught in technology — which means I approach software
+              with a strong preference for clarity over cleverness, and for
+              tools that do one thing well over platforms that try to do
+              everything.
             </p>
             <p>
-              Depth over speed. I would rather understand a problem completely
-              than ship a solution that solves the wrong thing quickly.
-              This applies to both client work at KaavOps and to curatorial
-              decisions at Simine Paris.
+              KaavOps came from watching founders in my network run businesses
+              that depended entirely on them being present. The pipeline worked
+              because they worked it. I kept thinking: this is an infrastructure
+              problem. It has a solution. So I built the agency to provide it.
+            </p>
+            <p>
+              Simine Paris came from a different kind of gap — the near-absence
+              of serious, sustained engagement with Iranian contemporary art in
+              European gallery culture. A periodic appearance at a fair is not
+              presence. We are building presence.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Beliefs ── */}
+      <section className="py-20 md:py-32 px-6 md:px-10">
+        <div className="mx-auto max-w-3xl">
+          <p className="label" style={{ color: "var(--color-text-muted)" }}>
+            — Philosophy
+          </p>
+          <h2
+            className="mt-3 text-3xl md:text-4xl"
+            style={{
+              fontFamily: "var(--font-serif)",
+              color: "var(--color-text-primary)",
+            }}
+          >
+            What I believe
+          </h2>
+
+          <div className="mt-10 flex flex-col gap-8">
+            {beliefs.map((item) => (
+              <div
+                key={item.label}
+                className="pt-6 border-t"
+                style={{ borderColor: "var(--color-border)" }}
+              >
+                <p
+                  className="text-base font-medium"
+                  style={{
+                    fontFamily: "var(--font-serif)",
+                    color: "var(--color-text-primary)",
+                  }}
+                >
+                  {item.label}
+                </p>
+                <p
+                  className="mt-2 text-sm leading-relaxed"
+                  style={{
+                    color: "var(--color-text-secondary)",
+                    maxWidth: "none",
+                  }}
+                >
+                  {item.body}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Current work & stack ── */}
+      <section
+        className="py-20 md:py-32 px-6 md:px-10"
+        style={{ backgroundColor: "var(--color-surface-muted)" }}
+      >
+        <div className="mx-auto max-w-3xl">
+          <p className="label" style={{ color: "var(--color-text-muted)" }}>
+            — Now
+          </p>
+          <h2
+            className="mt-3 text-3xl md:text-4xl"
+            style={{
+              fontFamily: "var(--font-serif)",
+              color: "var(--color-text-primary)",
+            }}
+          >
+            What I&apos;m working on
+          </h2>
+
+          <div
+            className="mt-8 flex flex-col gap-4 text-sm leading-relaxed"
+            style={{ color: "var(--color-text-secondary)" }}
+          >
+            <p>
+              Building the v2 onboarding system for KaavOps clients — full
+              automation from first call to live workflow. Preparing the next
+              Simine Paris exhibition program for autumn 2026. Writing this site
+              — using Claude Code to ship something that actually represents the
+              work.
             </p>
           </div>
 
@@ -261,61 +243,11 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── Interests ── */}
-      <section
-        className="py-20 md:py-32 px-6 md:px-10"
-        style={{ backgroundColor: "var(--color-surface-muted)" }}
-      >
-        <div className="mx-auto max-w-3xl">
-          <p className="label" style={{ color: "var(--color-text-muted)" }}>
-            — Interests
-          </p>
-          <h2
-            className="mt-3 text-3xl md:text-4xl"
-            style={{
-              fontFamily: "var(--font-serif)",
-              color: "var(--color-text-primary)",
-            }}
-          >
-            What I think about
-          </h2>
-
-          <div className="mt-10 flex flex-col gap-8">
-            {interests.map((item) => (
-              <div
-                key={item.label}
-                className="pt-6 border-t"
-                style={{ borderColor: "var(--color-border)" }}
-              >
-                <p
-                  className="text-base font-medium"
-                  style={{
-                    fontFamily: "var(--font-serif)",
-                    color: "var(--color-text-primary)",
-                  }}
-                >
-                  {item.label}
-                </p>
-                <p
-                  className="mt-2 text-sm leading-relaxed"
-                  style={{
-                    color: "var(--color-text-secondary)",
-                    maxWidth: "none",
-                  }}
-                >
-                  {item.body}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Background ── */}
+      {/* ── Closing CTA ── */}
       <section className="py-20 md:py-32 px-6 md:px-10">
         <div className="mx-auto max-w-3xl">
           <p className="label" style={{ color: "var(--color-text-muted)" }}>
-            — Background
+            — Let&apos;s talk
           </p>
           <h2
             className="mt-3 text-3xl md:text-4xl"
@@ -324,39 +256,26 @@ export default function AboutPage() {
               color: "var(--color-text-primary)",
             }}
           >
-            Where I come from
+            If any of this sounds relevant to what you&apos;re building:
           </h2>
-          <div
-            className="mt-8 flex flex-col gap-4 text-sm leading-relaxed"
-            style={{ color: "var(--color-text-secondary)" }}
+          <p
+            className="mt-6 text-sm leading-relaxed"
+            style={{ color: "var(--color-text-secondary)", maxWidth: "48ch" }}
           >
-            <p>
-              Iranian roots, Paris life. I have been based in France long
-              enough for it to be home, and connected to Iran closely enough
-              for it to remain essential. Both inform the work — the precision
-              and restraint of French professional culture, and the depth and
-              weight of Persian intellectual tradition.
-            </p>
-            <p>
-              I am fluent in French and English. My Persian is functional and
-              improving. I work across art world, private equity, food, and
-              fashion networks in France and Europe — contexts that do not
-              usually talk to each other, which turns out to be useful.
-            </p>
-            <p>
-              Self-taught in technology. My background is in business and the
-              art world, not engineering. I learned to build with tools, not
-              despite them — which means I approach software with a strong
-              preference for clarity over cleverness.
-            </p>
-          </div>
+            I am fluent in French and English. I work across art world, private
+            equity, food, and fashion networks in France and Europe — contexts
+            that do not usually talk to each other, which turns out to be
+            useful.
+          </p>
 
-          {/* CTA */}
           <div
-            className="mt-14 pt-10 border-t flex flex-col sm:flex-row sm:items-center gap-4"
+            className="mt-12 pt-10 border-t flex flex-col sm:flex-row sm:items-center gap-4"
             style={{ borderColor: "var(--color-border)" }}
           >
-            <Link href="/contact" className="btn-primary">
+            <Link href="/services" className="btn-primary">
+              Work with KaavOps
+            </Link>
+            <Link href="/contact" className="btn-secondary">
               Get in touch
             </Link>
             <Link href="/blog" className="btn-ghost text-sm">
