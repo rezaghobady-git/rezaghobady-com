@@ -26,14 +26,7 @@ export default function ContactCTASection() {
           >
             Whether you are interested in working together, have a question
             about KaavOps or Simine Paris, or just want to connect —
-            I&apos;m reachable at{" "}
-            <a
-              href="mailto:moi@rezaghobady.com"
-              className="contact-email-link"
-            >
-              moi@rezaghobady.com
-            </a>
-            . I reply to every message.
+            I reply to every message.
           </p>
 
           <div className="mt-8">

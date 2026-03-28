@@ -9,22 +9,14 @@ export const metadata: Metadata = {
 
 const links = [
   {
-    label: "Email",
-    value: "moi@rezaghobady.com",
-    href: "mailto:moi@rezaghobady.com",
-    external: false,
-  },
-  {
     label: "LinkedIn",
     value: "linkedin.com/in/rezaghobady",
     href: "https://linkedin.com/in/rezaghobady",
-    external: true,
   },
   {
     label: "KaavOps",
     value: "kaavops.com",
     href: "https://kaavops.com",
-    external: true,
   },
 ];
 
@@ -51,8 +43,8 @@ export default function ContactPage() {
             style={{ color: "var(--color-text-secondary)", maxWidth: "48ch" }}
           >
             Whether you&apos;re interested in working together, have a question
-            about KaavOps or Simine Paris, or just want to connect — I&apos;m
-            reachable below. I reply to every message.
+            about KaavOps or Simine Paris, or just want to connect — use the
+            form below. I reply to every message.
           </p>
         </div>
       </section>
@@ -62,10 +54,10 @@ export default function ContactPage() {
         <div className="mx-auto max-w-3xl">
           <div className="grid grid-cols-1 md:grid-cols-5 gap-12 md:gap-16">
 
-            {/* Left — direct links */}
+            {/* Left — external links */}
             <div className="md:col-span-2">
               <p className="label" style={{ color: "var(--color-text-muted)" }}>
-                — Direct
+                — Elsewhere
               </p>
               <ul className="mt-6 flex flex-col">
                 {links.map((link, i) => (
@@ -84,14 +76,12 @@ export default function ContactPage() {
                     </p>
                     <a
                       href={link.href}
-                      target={link.external ? "_blank" : undefined}
-                      rel={link.external ? "noopener noreferrer" : undefined}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="contact-direct-link text-sm font-medium"
                     >
                       {link.value}
-                      {link.external && (
-                        <span style={{ color: "var(--color-text-muted)" }}> ↗</span>
-                      )}
+                      <span style={{ color: "var(--color-text-muted)" }}> ↗</span>
                     </a>
                   </li>
                 ))}
@@ -112,7 +102,7 @@ export default function ContactPage() {
             {/* Right — form */}
             <div className="md:col-span-3">
               <p className="label" style={{ color: "var(--color-text-muted)" }}>
-                — Or send a message
+                — Send a message
               </p>
               <div className="mt-6">
                 <ContactForm />

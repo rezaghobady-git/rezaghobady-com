@@ -40,7 +40,7 @@ export async function submitContact(
       return {
         status: "error",
         message:
-          "Failed to send — please email me directly at moi@rezaghobady.com.",
+          "Failed to send — please try again or reach out via LinkedIn.",
       };
     }
   } catch (err) {
@@ -48,7 +48,7 @@ export async function submitContact(
     return {
       status: "error",
       message:
-        "Failed to send — please email me directly at moi@rezaghobady.com.",
+        "Failed to send — please try again or reach out via LinkedIn.",
     };
   }
 
