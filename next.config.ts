@@ -7,6 +7,7 @@ const withMDX = createMDX({
 
 const nextConfig: NextConfig = {
   pageExtensions: ["ts", "tsx", "md", "mdx"],
+  transpilePackages: ["@keystatic/core", "@keystatic/next", "@keystar/ui"],
 };
 
 export default withMDX(nextConfig);
