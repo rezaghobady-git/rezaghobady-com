@@ -41,7 +41,25 @@ export default function HeroSection() {
         >
           I design AI-powered revenue systems for agencies and B2B service
           businesses — so founders can focus on the work only they can do.
-          Based in Paris. Founder of KaavOps and Simine Paris.
+          Based in Paris. Founder of{" "}
+          <a
+            href="https://kaavops.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline underline-offset-2 hover:opacity-70 transition-opacity duration-200"
+          >
+            KaavOps
+          </a>{" "}
+          and{" "}
+          <a
+            href="https://simine.fr"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline underline-offset-2 hover:opacity-70 transition-opacity duration-200"
+          >
+            Simine Paris
+          </a>
+          .
         </p>
 
         {/* CTAs */}
