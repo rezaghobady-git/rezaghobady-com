@@ -43,7 +43,7 @@ export default function HeroSection() {
           businesses — so founders can focus on the work only they can do.
           Based in Paris. Founder of{" "}
           <a
-            href="https://kaavops.com"
+            href="https://kaavops.com?utm_source=rezaghobady.com&utm_medium=website&utm_campaign=hero"
             target="_blank"
             rel="noopener noreferrer"
             className="underline underline-offset-2 hover:opacity-70 transition-opacity duration-200"
@@ -52,7 +52,7 @@ export default function HeroSection() {
           </a>{" "}
           and{" "}
           <a
-            href="https://simine.fr"
+            href="https://simine.fr?utm_source=rezaghobady.com&utm_medium=website&utm_campaign=hero"
             target="_blank"
             rel="noopener noreferrer"
             className="underline underline-offset-2 hover:opacity-70 transition-opacity duration-200"

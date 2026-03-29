@@ -54,7 +54,7 @@ const systems = [
   },
 ];
 
-const CAL_LINK = "reza.ghobady/30min-strategy-call";
+const CAL_LINK = "reza.ghobady/30min-strategy-call?utm_source=rezaghobady.com&utm_medium=website&utm_campaign=book-audit";
 const CAL_NAMESPACE = "30min-strategy-call";
 
 export default function ServicesPage() {
