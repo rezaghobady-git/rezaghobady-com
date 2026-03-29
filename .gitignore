@@ -52,7 +52,6 @@ Thumbs.db
 
 # tina
 /public/admin
-/tina/__generated__
 
 # typescript
 *.tsbuildinfo
