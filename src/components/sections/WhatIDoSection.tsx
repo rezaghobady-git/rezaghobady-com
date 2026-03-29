@@ -35,7 +35,8 @@ export default function WhatIDoSection() {
           style={{ color: "var(--color-text-secondary)", maxWidth: "52ch" }}
         >
           Through KaavOps, I design and deploy AI-powered revenue infrastructure
-          for agencies and B2B service providers across France and Europe.
+          for agencies and B2B service providers who have found product-market
+          fit and need infrastructure to match.
         </p>
 
         <div className="mt-12 flex flex-col">

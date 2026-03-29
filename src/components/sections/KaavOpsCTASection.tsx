@@ -30,7 +30,7 @@ export default function KaavOpsCTASection() {
             week. The systems run for years.
           </p>
           <p>
-            France and Europe. English and French. No retainers without results.
+            English and French. Remote-friendly.
           </p>
         </div>
 
