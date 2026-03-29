@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -53,9 +54,19 @@ const systems = [
   },
 ];
 
+const CAL_LINK = "reza.ghobady/30min-strategy-call";
+const CAL_NAMESPACE = "30min-strategy-call";
+
 export default function ServicesPage() {
   return (
     <>
+      <Script
+        id="cal-embed"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `(function(C,A,L){let p=function(a,ar){a.q.push(ar);};let d=C.document;C.Cal=C.Cal||function(){let cal=C.Cal;let ar=arguments;if(!cal.loaded){cal.ns={};cal.q=cal.q||[];d.head.appendChild(d.createElement("script")).src=A;cal.loaded=true;}if(ar[0]===L){const api=function(){p(api,arguments);};const namespace=ar[1];api.q=api.q||[];typeof namespace==="string"?(cal.ns[namespace]=api)&&p(api,ar):p(cal,ar);return;}p(cal,ar);};})(window,"https://app.cal.eu/embed/embed.js","init");Cal("init","${CAL_NAMESPACE}",{origin:"https://cal.eu"});Cal.ns["${CAL_NAMESPACE}"]("ui",{"hideEventTypeDetails":false,"layout":"month_view"});`,
+        }}
+      />
       {/* ── Header ── */}
       <section className="py-20 md:py-32 px-6 md:px-10">
         <div className="mx-auto max-w-3xl">
@@ -81,9 +92,14 @@ export default function ServicesPage() {
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">
-            <Link href="/contact" className="btn-primary">
+            <button
+              data-cal-namespace={CAL_NAMESPACE}
+              data-cal-link={CAL_LINK}
+              data-cal-config='{"layout":"month_view"}'
+              className="btn-primary"
+            >
               Book an audit
-            </Link>
+            </button>
             <a
               href="https://kaavops.com"
               target="_blank"
@@ -254,9 +270,14 @@ export default function ServicesPage() {
             className="mt-12 pt-10 border-t flex flex-col sm:flex-row sm:items-center gap-4"
             style={{ borderColor: "var(--color-border)" }}
           >
-            <Link href="/contact" className="btn-primary">
+            <button
+              data-cal-namespace={CAL_NAMESPACE}
+              data-cal-link={CAL_LINK}
+              data-cal-config='{"layout":"month_view"}'
+              className="btn-primary"
+            >
               Book an audit
-            </Link>
+            </button>
             <Link href="/about" className="btn-ghost text-sm">
               About Reza →
             </Link>
