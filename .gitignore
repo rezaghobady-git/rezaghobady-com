@@ -50,6 +50,10 @@ Thumbs.db
 # vercel
 .vercel
 
+# tina
+/public/admin
+/tina/__generated__
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
