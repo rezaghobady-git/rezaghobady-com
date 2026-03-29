@@ -50,8 +50,6 @@ Thumbs.db
 # vercel
 .vercel
 
-# tina
-/public/admin
 
 # typescript
 *.tsbuildinfo
