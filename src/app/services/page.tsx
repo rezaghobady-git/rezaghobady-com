@@ -165,7 +165,7 @@ export default function ServicesPage() {
       </section>
 
       {/* ── How it works ── */}
-      <section className="py-20 md:py-32 px-6 md:px-10">
+      <section id="how-it-works" className="py-20 md:py-32 px-6 md:px-10">
         <div className="mx-auto max-w-3xl">
           <p className="label" style={{ color: "var(--color-text-muted)" }}>
             — Process

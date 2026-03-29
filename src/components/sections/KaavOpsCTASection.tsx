@@ -35,7 +35,7 @@ export default function KaavOpsCTASection() {
         </div>
 
         <div className="mt-10 flex flex-wrap gap-4">
-          <Link href="/services" className="btn-primary">
+          <Link href="/services#how-it-works" className="btn-primary">
             See how it works
           </Link>
           <a
