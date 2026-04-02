@@ -3,19 +3,7 @@ import config from "../../../../../keystatic.config";
 
 export const dynamic = "force-dynamic";
 
-let handler: ReturnType<typeof makeRouteHandler>;
+const handler = makeRouteHandler({ config });
 
-function getHandler() {
-  if (!handler) {
-    handler = makeRouteHandler({ config });
-  }
-  return handler;
-}
-
-export function GET(req: Request) {
-  return getHandler().GET(req);
-}
-
-export function POST(req: Request) {
-  return getHandler().POST(req);
-}
+export const GET = handler.GET;
+export const POST = handler.POST;
