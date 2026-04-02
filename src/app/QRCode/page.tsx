@@ -55,7 +55,7 @@ export default function QRCodePage() {
                 {/* Action Button */}
                 <Link
                     href="/"
-                    className="block w-full py-3 bg-[#F9F8F6] text-black text-lg font-bold rounded-lg transition-all active:scale-95 shadow-lg"
+                    className="block w-full py-3 bg-[#F9F8F6] text-black text-lg font-medium rounded-lg transition-all active:scale-95 shadow-lg"
                 >
                     Visit Website
                 </Link>

@@ -48,7 +48,7 @@ export function HeroEditorial() {
                 <p>
                     At{" "}
                     <a
-                        href="https://simine.paris?utm_source=rezaghobady.com&utm_medium=referral&utm_campaign=personal_portfolio"
+                        href="https://simine.fr?utm_source=rezaghobady.com&utm_medium=referral&utm_campaign=personal_portfolio"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="font-semibold text-black underline decoration-1 underline-offset-4 hover:opacity-70 transition-opacity cursor-pointer"
