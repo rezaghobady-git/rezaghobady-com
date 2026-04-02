@@ -29,7 +29,7 @@ export default function Footer() {
               Reza Ghobady
             </Link>
             <p className="mt-2 text-sm footer-muted">
-              Paris — AI systems for service businesses. Gallery founder.
+              Paris — AI automation systems for service businesses.
             </p>
           </div>
 

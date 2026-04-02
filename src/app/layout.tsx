@@ -1,5 +1,14 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "@/styles/globals.css";
+
+// 1. Viewport is handled separately in newer Next.js versions
+export const viewport: Viewport = {
+  themeColor: "#1a1a1a",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
 
 export const metadata: Metadata = {
   title: {
@@ -11,6 +20,12 @@ export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL ?? "https://rezaghobady.com"
   ),
+  // 2. These flags tell mobile browsers to treat the site like an app
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "Reza Ghobady",
+  },
   openGraph: {
     siteName: "Reza Ghobady",
     locale: "en_US",

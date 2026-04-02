@@ -1,21 +1,20 @@
-import { Hero } from "./sections/Hero";
+import { StrategyHero } from "./sections/StrategyHero";
 import { QuickActions } from "./sections/QuickActions";
 import { WhoItsFor } from "./sections/WhoItsFor";
 import { Process } from "./sections/Process";
 import { About } from "./sections/About";
 import { QRBlock } from "./sections/QRBlock";
 import { FinalCTA } from "./sections/FinalCTA";
+import { HeroEditorial } from "./sections/HeroEditorial";
+import SocialLinks from "./sections/SocialLinks";
 
-export default function ContactPage() {
+export default function MoiPage() {
     return (
-        <main className="bg-gradient-to-b from-white via-gray-50 to-white text-black">
-            <Hero />
-            <QuickActions />
-            <WhoItsFor />
-            <Process />
-            <About />
-            <QRBlock />
-            <FinalCTA />
-        </main>
+        <div className="bg-white min-h-screen text-gray-900 font-sans selection:bg-gray-100">
+            <main className="max-w-screen-xl mx-auto px-8 pt-24 pb-20">
+                <HeroEditorial />
+                <SocialLinks />
+            </main>
+        </div>
     );
 }

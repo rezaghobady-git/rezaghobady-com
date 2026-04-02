@@ -16,6 +16,6 @@ X-SOCIALPROFILE;TYPE=X/Twitter:https://x.com/rezamgm
 
 ORG:KaavOps
 TITLE:Founder
-TEL;TYPE=CELL:+33.7.68.63.10.96
+TEL;TYPE=CELL,VOICE,MSG:+33768631096
 URL:https://rezaghobady.com
 END:VCARD
