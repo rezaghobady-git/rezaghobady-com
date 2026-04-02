@@ -1,5 +1,10 @@
 "use client";
 
+"use client";
+
+export const runtime = 'nodejs'; // Forces the standard runtime
+export const dynamic = 'force-static'; // Tells Next.js to pre-render this as a static HTML file
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { QRCodeSVG } from 'qrcode.react';
