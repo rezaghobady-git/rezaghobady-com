@@ -1,5 +1,9 @@
 "use client";
 
+// This forces Vercel to use the standard Node.js engine instead of Edge
+export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { QRCodeSVG } from 'qrcode.react';
