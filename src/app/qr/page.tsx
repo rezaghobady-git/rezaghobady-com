@@ -24,14 +24,12 @@ export default function QRCodePage() {
                     <QRCodeSVG value="https://rezaghobady.com/moi" size={144} level="H" />
                 </div>
 
+                {/* Replace the <Image> component with this to test */}
                 <div className="relative w-36 h-36 mx-auto mb-6 overflow-hidden rounded-full border-4 border-[#1a1a1a]">
-                    <Image
+                    <img
                         src="/reza-profile.jpg"
                         alt="Reza Ghobady"
-                        fill
-                        sizes="144px"
-                        priority
-                        className="object-cover"
+                        className="w-full h-full object-cover"
                     />
                 </div>
 

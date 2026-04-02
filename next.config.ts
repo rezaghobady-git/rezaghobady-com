@@ -13,8 +13,13 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: '/QRCode',
+        destination: '/qr',
+        permanent: true,
+      },
+      {
         source: '/qrcode',
-        destination: '/QRCode',
+        destination: '/qr',
         permanent: true,
       },
     ];
