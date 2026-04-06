@@ -1,0 +1,36 @@
+{
+    "Metadata": {
+        "title": "Reza Ghobady",
+        "description": "I design AI-powered revenue systems..."
+    },
+    "Hero": {
+        "location": "— Paris",
+        "title": "Simplify your thinking.",
+        "subtitle": "Build systems.",
+        "description": "Let them run your business.",
+        "body": "I design AI-powered revenue systems for agencies and B2B service businesses — so founders can focus on the work only they can do. Based in Paris. Founder of <kaav>KaavOps</kaav> and <simine>Simine Paris</simine>.",
+        "ctaWork": "Work with KaavOps",
+        "ctaAbout": "About me"
+    },
+    "Problem": {
+        "label": "The Problem",
+        "headline": "Most service businesses are built around their founders.",
+        "subheadline": "Your pipeline works because you work it. Your delivery happens because you oversee it. You are the engine, but also the bottleneck.",
+        "points": {
+            "bottleneck": "Founders spend 60% of their time on repetitive tasks.",
+            "scaling": "Revenue plateaus because there are only so many hours in your day.",
+            "freedom": "If you stop working, the system stops growing."
+        }
+    },
+    "Nav": {
+        "about": "About",
+        "work": "My Work",
+        "services": "Services",
+        "contact": "Get in touch"
+    },
+    "Footer": {
+        "rights": "© {year} YourName. All rights reserved.",
+        "builtWith": "Built with Next.js & ❤️",
+        "socials": "Connect with me"
+    }
+}

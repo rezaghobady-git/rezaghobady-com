@@ -1,5 +1,9 @@
 import type { NextConfig } from "next";
 import createMDX from "@next/mdx";
+import createNextIntlPlugin from 'next-intl/plugin';
+
+// Standard initialization (it will automatically find src/i18n/request.ts)
+const withNextIntl = createNextIntlPlugin();
 
 const withMDX = createMDX({
   extension: /\.mdx?$/,
@@ -8,22 +12,7 @@ const withMDX = createMDX({
 const nextConfig: NextConfig = {
   pageExtensions: ["ts", "tsx", "md", "mdx"],
   transpilePackages: ["@keystatic/core", "@keystatic/next", "@keystar/ui"],
-
-  // Re-adding the redirects correctly
-  async redirects() {
-    return [
-      {
-        source: '/QRCode',
-        destination: '/qr',
-        permanent: true,
-      },
-      {
-        source: '/qrcode',
-        destination: '/qr',
-        permanent: true,
-      },
-    ];
-  },
+  // ... keep your redirects here ...
 };
 
-export default withMDX(nextConfig);
+export default withNextIntl(withMDX(nextConfig));

@@ -1,0 +1,25 @@
+{
+    "Metadata": {
+        "title": "Reza Ghobady",
+        "description": "Je conçois des systèmes de revenus basés sur l'IA..."
+    },
+    "Hero": {
+        "location": "— Paris",
+        "title": "Simplifiez votre pensée.",
+        "subtitle": "Construisez des systèmes.",
+        "description": "Laissez-les gérer votre entreprise.",
+        "body": "Je conçois des systèmes de génération de revenus basés sur l'IA pour les agences et les entreprises de services B2B, afin que les fondateurs puissent se concentrer sur leur cœur de métier. Basée à Paris. Fondateur de <kaav>KaavOps</kaav> et <simine>Simine Paris</simine>.",
+        "ctaWork": "Travailler avec KaavOps",
+        "ctaAbout": "À propos de moi"
+    },
+    "Problem": {
+        "label": "Le Problème",
+        "headline": "La plupart des entreprises de services sont construites autour de leurs fondateurs.",
+        "subheadline": "Votre pipeline fonctionne parce que vous le gérez. Votre livraison se fait parce que vous la supervisez. Vous êtes le moteur, mais aussi le goulot d'étranglement.",
+        "points": {
+            "bottleneck": "Les fondateurs passent 60% de leur temps sur des tâches répétitives.",
+            "scaling": "Le revenu plafonne parce qu'il n'y a que tant d'heures dans votre journée.",
+            "freedom": "Si vous arrêtez de travailler, le système arrête de croître."
+        }
+    }
+}
