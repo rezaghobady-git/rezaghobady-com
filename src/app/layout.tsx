@@ -6,12 +6,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    // The suppressHydrationWarning is key here!
-    <html lang="en" suppressHydrationWarning>
-      <body className="min-h-screen flex flex-col" suppressHydrationWarning>
-        {children}
-      </body>
-    </html>
-  );
+  // We remove <html> and <body> from here because 
+  // they are already provided in app/[locale]/layout.tsx
+  return children;
 }

@@ -1,14 +1,17 @@
-import Link from "next/link";
-
-const footerLinks = [
-  { href: "/about", label: "About" },
-  { href: "/blog", label: "Blog" },
-  { href: "/services", label: "Services" },
-  { href: "/contact", label: "Contact" },
-];
+import { Link } from "@/i18n/navigation";
+import { useTranslations } from 'next-intl';
 
 export default function Footer() {
+  const tNav = useTranslations('Nav');
+  const tFooter = useTranslations('Footer');
   const year = new Date().getFullYear();
+
+  const footerLinks = [
+    { href: "/about", label: tNav('about') },
+    { href: "/blog", label: tNav('work') },
+    { href: "/services", label: tNav('services') },
+    { href: "/contact", label: tNav('contact') },
+  ];
 
   return (
     <footer
@@ -29,7 +32,7 @@ export default function Footer() {
               Reza Ghobady
             </Link>
             <p className="mt-2 text-sm footer-muted">
-              Paris — AI automation systems for service businesses.
+              {tFooter('tagline')}
             </p>
           </div>
 
@@ -52,7 +55,15 @@ export default function Footer() {
           className="mt-10 pt-6 border-t flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3"
           style={{ borderColor: "var(--color-border)" }}
         >
-          <p className="label footer-muted">© {year} Reza Ghobady</p>
+          <div className="flex flex-col gap-1">
+            <p className="label footer-muted">
+              {tFooter('rights', { year })}
+            </p>
+            <p className="text-[10px] uppercase tracking-widest opacity-50 footer-muted">
+              {tFooter('builtWith')}
+            </p>
+          </div>
+
           <div className="flex gap-5">
             <a
               href="https://linkedin.com/in/rezaghobady"

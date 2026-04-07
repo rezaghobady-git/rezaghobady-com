@@ -3,6 +3,12 @@
         "title": "Reza Ghobady",
         "description": "I design AI-powered revenue systems..."
     },
+    "Nav": {
+        "about": "About",
+        "work": "My Work",
+        "services": "Services",
+        "contact": "Get in touch"
+    },
     "Hero": {
         "location": "— Paris",
         "title": "Simplify your thinking.",
@@ -22,15 +28,193 @@
             "freedom": "If you stop working, the system stops growing."
         }
     },
-    "Nav": {
-        "about": "About",
-        "work": "My Work",
-        "services": "Services",
-        "contact": "Get in touch"
+    "HomeServices": {
+        "label": "— What I do",
+        "headline": "I build the systems you're running manually.",
+        "subheadline": "Through KaavOps, I design and deploy AI-powered revenue infrastructure for agencies and B2B service providers who have found product-market fit and need infrastructure to match.",
+        "list": "lead-gen,onboarding,retention",
+        "lead-gen": {
+            "title": "Lead generation",
+            "description": "Automated outreach and qualification systems that surface the right prospects continuously — without you managing the process."
+        },
+        "onboarding": {
+            "title": "Client onboarding",
+            "description": "Structured workflows that take a new client from signed to operational without requiring your personal attention at each step."
+        },
+        "retention": {
+            "title": "Follow-up & retention",
+            "description": "Sequences that keep clients engaged, surface upsell moments, and handle renewals before they become conversations you have to remember."
+        }
+    },
+    "KaavOpsHome": {
+        "label": "— KaavOps",
+        "tagline": "AI automation for agencies and B2B service providers.",
+        "description": "We work with founders who have already found product-market fit and need infrastructure to match their ambition. The audit takes one week. The systems run for years.",
+        "details": "English and French. Remote-friendly.",
+        "cta": "See how it works",
+        "url": "kaavops.com ↗"
+    },
+    "Writing": {
+        "label": "— Writing",
+        "headline": "Recent writing",
+        "viewAll": "All writing →",
+        "posts": {
+            "revenue": {
+                "title": "Building Revenue Systems with AI — What Actually Works",
+                "date": "10 March 2026",
+                "tag": "AI",
+                "excerpt": "Most AI automation projects fail at the same point: the handoff between systems. Here is what I have learned building revenue infrastructure for service businesses."
+            },
+            "art": {
+                "title": "Why Iranian Contemporary Art Belongs at the Center of European Conversation",
+                "date": "18 February 2026",
+                "tag": "Art",
+                "excerpt": "Iranian artists are producing some of the most urgent work being made today. The question is not whether Europe is ready — it is whether we have the courage to present it properly."
+            },
+            "tools": {
+                "title": "The Tools I Use to Run Two Businesses Solo",
+                "date": "29 January 2026",
+                "tag": "Tools",
+                "excerpt": "A straightforward account of the stack — n8n, Claude Code, ClickUp, and a few others — and why each one earned its place."
+            }
+        }
+    },
+    "Newsletter": {
+        "label": "— Newsletter",
+        "headline": "If your business feels harder than it should:",
+        "subheadline": "Start here.",
+        "description": "I write about systems thinking, AI automation, and building businesses that don't depend on you being available. No frequency promises — only when I have something useful to say.",
+        "placeholder": "your@email.com",
+        "button": "Start here",
+        "disclaimer": "No spam. Unsubscribe any time."
     },
     "Footer": {
-        "rights": "© {year} YourName. All rights reserved.",
+        "tagline": "Paris — AI Automation Systems for Service Providers.",
+        "rights": "© {year} Reza Ghobady. All Rights Reserved.",
         "builtWith": "Built with Next.js & ❤️",
-        "socials": "Connect with me"
+        "socials": "Follow me"
+    },
+    "ServicesPage": {
+        "Metadata": {
+            "title": "Services",
+            "description": "KaavOps designs AI-powered revenue systems for agencies and B2B service providers across France and Europe."
+        },
+        "Header": {
+            "label": "— KaavOps",
+            "title": "Revenue systems that run without you.",
+            "description": "We design and deploy AI-powered automation infrastructure for agencies and B2B service providers across France and Europe. The audit takes one week. The systems run for years.",
+            "ctaAudit": "Book an audit"
+        },
+        "Systems": {
+            "label": "— Systems",
+            "title": "What we build",
+            "list": "lead-gen,onboarding,retention,reporting",
+            "lead-gen": {
+                "tag": "Lead generation",
+                "description": "Automated outreach and qualification that runs continuously — finding, contacting, and filtering prospects without manual effort."
+            },
+            "onboarding": {
+                "tag": "Client onboarding",
+                "description": "Structured workflows that take a new client from signed to operational without requiring your personal attention at each step."
+            },
+            "retention": {
+                "tag": "Follow-up & retention",
+                "description": "Sequences that keep clients engaged, surface upsell moments, and handle renewals before they become conversations you have to remember."
+            },
+            "reporting": {
+                "tag": "Reporting & visibility",
+                "description": "Dashboards and automated summaries that give you the numbers you need without pulling them yourself."
+            }
+        },
+        "Process": {
+            "label": "— Process",
+            "title": "How it works",
+            "steps": "01,02,03,04",
+            "01": {
+                "label": "Automation audit",
+                "body": "We map every manual, founder-dependent process in your revenue operations. One week. Deliverable: a clear picture of what can be automated, what the impact would be, and what we would build."
+            },
+            "02": {
+                "label": "System design",
+                "body": "We design the infrastructure — the workflows, connections, and logic — before touching any tools. Good automation is an architecture problem first."
+            },
+            "03": {
+                "label": "Build & deploy",
+                "body": "We build in n8n, connected to your existing CRM, email, and calendar. Everything is documented. You own the systems entirely — no dependency on us to keep them running."
+            },
+            "04": {
+                "label": "Ongoing support",
+                "body": "Available for maintenance, expansions, and new system builds as your business grows. No retainer required to start."
+            }
+        },
+        "Fit": {
+            "label": "— Fit",
+            "title": "Who this is for",
+            "body1": "Agencies and B2B service businesses that have found product-market fit and need infrastructure to match their ambition. You are already generating revenue. The problem is that the revenue process depends on you.",
+            "body2": "We work in France and Europe, in English and French. Typical client profile: 5–50 person agency or consultancy, €500k–€5M ARR, founder-led sales with a team that needs the founder out of every deal.",
+            "body3": "If you are at an earlier stage and want to build clean infrastructure from the start, we can talk about that too.",
+            "ctaAbout": "About Reza →"
+        }
+    },
+    "AboutPage": {
+        "Metadata": {
+            "title": "About — Reza Ghobady",
+            "description": "I build things that run without me. Founder of KaavOps and Simine Paris."
+        },
+        "Header": {
+            "label": "— About",
+            "title": "I build things that run without me.",
+            "description": "At KaavOps, I design AI-powered revenue systems for agencies and B2B service providers. At Simine Paris, I run a contemporary art gallery focused on Iranian artists. I work solo, move deliberately, and prefer depth over speed."
+        },
+        "Story": {
+            "label": "— Story",
+            "title": "How I got here",
+            "body1": "Iranian roots, Paris life. I have been based in France long enough for it to be home, and connected to Iran closely enough for it to remain essential.",
+            "body2": "My background is in business and the art world, not engineering. I am self-taught in technology — which means I approach software with a strong preference for clarity over cleverness.",
+            "body3": "KaavOps came from watching founders in my network run businesses that depended entirely on them. I kept thinking: this is an infrastructure problem.",
+            "body4": "Simine Paris came from a different kind of gap — the near-absence of serious engagement with Iranian contemporary art in European gallery culture. We are building presence."
+        },
+        "Philosophy": {
+            "label": "— Philosophy",
+            "title": "What I believe",
+            "list": "complexity,depth,solo,context",
+            "complexity": {
+                "title": "Complexity is usually a design failure.",
+                "desc": "When a business feels hard to run, the problem is almost never effort. It is architecture."
+            },
+            "depth": {
+                "title": "Depth over speed, always.",
+                "desc": "I would rather understand a problem completely than ship a solution quickly that solves the wrong thing."
+            },
+            "solo": {
+                "title": "Solo is a legitimate operating model.",
+                "desc": "Both businesses run without employees. It forces clarity about what actually matters and what is just noise."
+            },
+            "context": {
+                "title": "Context is not a footnote.",
+                "desc": "The difference between a useful system and a profitable one is usually a design problem, not a technology problem."
+            }
+        },
+        "Now": {
+            "label": "— Now",
+            "title": "What I'm working on",
+            "body": "Building the v2 onboarding system for KaavOps. Preparing the next Simine Paris exhibition for autumn 2026. Writing this site using Claude Code.",
+            "stackLabel": "Current stack",
+            "stack": {
+                "n8n": "Automation orchestration",
+                "Claude Code": "Development",
+                "ClickUp": "Operations & project management",
+                "Linear": "Software project tracking",
+                "Notion": "Reference & documentation"
+            }
+        },
+        "Contact": {
+            "label": "— Let's talk",
+            "title": "If any of this sounds relevant to what you're building:",
+            "body": "I am fluent in French and English. I work across art, private equity, food, and fashion networks — contexts that do not usually talk to each other.",
+            "ctaWork": "Work with KaavOps",
+            "ctaContact": "Get in touch",
+            "ctaWriting": "Read my writing →"
+        }
     }
 }

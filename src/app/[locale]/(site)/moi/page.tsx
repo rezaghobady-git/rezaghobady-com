@@ -33,7 +33,11 @@ export default function MoiPage() {
         /* Reduced pt-4 to pt-2 for mobile. 
            This moves the image significantly closer to the top of the screen.
         */
-        <div className="min-h-screen flex flex-col items-center pt-2 md:pt-12 pb-20 px-4 md:px-6" style={{ backgroundColor: 'var(--color-bg)' }}>
+        /* Change pt-4 to pt-0 for mobile, md:pt-8 for desktop */
+        /* Reduced pt-0 to pt-1 on mobile. 
+   Added gap-1 to SocialLinks to keep them tight.
+*/
+        <div className="min-h-screen flex flex-col items-center pt-1 md:pt-6 pb-12 px-4 md:px-6" style={{ backgroundColor: 'var(--color-bg)' }}>
 
             <style dangerouslySetInnerHTML={{
                 __html: `
@@ -43,9 +47,17 @@ export default function MoiPage() {
             `}} />
 
             <HeroEditorial />
-            <SocialLinks />
 
-            <main className="w-full max-w-[640px] mt-8 md:mt-12 flex flex-col gap-4">
+            {/* Reduce margin-top of SocialLinks component if possible, 
+        or wrap it in a div with mt-2 
+    */}
+            <div className="mt-2 md:mt-4">
+                <SocialLinks />
+            </div>
+
+            {/* Pulled the main stack up even more with mt-4 */}
+            <main className="w-full max-w-[640px] mt-4 md:mt-8 flex flex-col gap-3 md:gap-4">
+                {/* Container 1, 2, 3 */}
 
                 {/* CONTAINER 1: LEAD MAGNET */}
                 <a href="#" className="group flex items-center p-4 md:p-6 border border-[var(--color-border)] rounded-xl transition-all hover:border-[var(--color-accent-warm)] bg-[var(--color-surface)]">
@@ -117,6 +129,21 @@ export default function MoiPage() {
                         <svg className="w-3.5 h-3.5 md:w-[18px] md:h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
                     </div>
                 </a>
+                {/* Updated Footer: Reduced mt-20 to mt-8 and pt-8 to pt-4 */}
+                {/* Removed border-t and reduced mt-8 to mt-4 */}
+                <div className="mt-4 md:mt-8 flex flex-col items-center gap-2 pb-8 w-full max-w-[640px]">
+                    <div className="flex gap-6">
+                        <a href="https://kaavops.com" target="_blank" className="text-[9px] uppercase tracking-[0.2em] text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)] font-medium">
+                            KaavOps
+                        </a>
+                        <a href="https://rezaghobady.com" className="text-[9px] uppercase tracking-[0.2em] text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)] font-medium">
+                            Personal Site
+                        </a>
+                    </div>
+                    <p className="text-[8px] uppercase tracking-[0.1em] text-[var(--color-text-muted)] opacity-30">
+                        © REZA GHOBADY
+                    </p>
+                </div>
 
             </main>
         </div>

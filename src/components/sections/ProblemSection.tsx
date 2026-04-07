@@ -12,25 +12,25 @@ export default function ProblemSection() {
         </p>
 
         {/* Role: Headline */}
-        <h2 className="text-4xl font-serif mb-6">
+        <h2 className="mt-3 text-3xl md:text-4xl font-serif font-normal mb-6">
           {t('headline')}
         </h2>
 
         {/* Role: Subheadline */}
-        <p className="text-xl text-gray-600 mb-12">
+        <p className="text-l text-gray-600 mb-12">
           {t('subheadline')}
         </p>
 
         {/* Role: List Items */}
         <div className="space-y-8">
           <div className="border-l-2 border-black pl-6">
-            <p className="text-lg">{t('points.bottleneck')}</p>
+            <p className="text-l">{t('points.bottleneck')}</p>
           </div>
           <div className="border-l-2 border-black pl-6">
-            <p className="text-lg">{t('points.scaling')}</p>
+            <p className="text-l">{t('points.scaling')}</p>
           </div>
           <div className="border-l-2 border-black pl-6">
-            <p className="text-lg">{t('points.freedom')}</p>
+            <p className="text-l">{t('points.freedom')}</p>
           </div>
         </div>
       </div>

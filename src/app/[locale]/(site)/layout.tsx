@@ -29,7 +29,7 @@ export default async function SiteLayout({
       <body className="min-h-screen flex flex-col" suppressHydrationWarning>
         <NextIntlClientProvider messages={messages}>
           <Nav />
-          <main className="flex-1 pt-16">
+          <main className="flex-1">
             {children} {/* Removed LanguageSwitcher from here */}
           </main>
           <Footer />

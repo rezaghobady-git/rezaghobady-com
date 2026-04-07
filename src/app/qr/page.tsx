@@ -46,7 +46,7 @@ export default function QRCodePage() {
                     href="/moi"
                     className="block w-full py-5 bg-[#F9F8F6] text-black text-lg font-medium rounded-lg transition-all active:scale-95 shadow-lg"
                 >
-                    Visit Website
+                    Visit My Profile
                 </Link>
             </div>
         </main>
