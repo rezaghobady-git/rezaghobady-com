@@ -1,6 +1,8 @@
-export default function LinkInBioLayout({ children }: { children: React.ReactNode }) {
+import { ReactNode } from 'react';
+
+export default function MoiLayout({ children }: { children: ReactNode }) {
     return (
-        <div className="min-h-screen bg-[var(--color-bg)]">
+        <div className="link-in-bio-wrapper">
             {children}
         </div>
     );

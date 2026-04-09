@@ -473,3 +473,9 @@ p {
   letter-spacing: -0.01em;
   text-align: center;
 }
+
+/* If the Moi wrapper exists, hide the Nav and Footer */
+body:has(.link-in-bio-wrapper) nav,
+body:has(.link-in-bio-wrapper) footer {
+  display: none !important;
+}
