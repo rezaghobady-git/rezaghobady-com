@@ -13,8 +13,18 @@ export default function SocialLinks() {
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4l11.733 16h4.267l-11.733-16zM4 20l6.768-6.768m2.464-2.464L20 4" /></svg>
             </SocialIcon>
 
+            {/* NEW: Substack */}
+            <SocialIcon href="https://rezaghobady.substack.com" label="Substack">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M22.539 8.242H1.46V5.406h21.079v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.079V0z" />
+                </svg>
+            </SocialIcon>
+
+            {/* UPDATED: WhatsApp Message Bubble Icon */}
             <SocialIcon href={`https://wa.me/33768631096?text=${whatsappMsg}`} label="WhatsApp">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 1 1-7.6-11.7 8.38 8.38 0 0 1 3.8.9L21 3z" />
+                </svg>
             </SocialIcon>
 
             <SocialIcon href="/rezaghobady.vcf" label="vCard" download={true}>
@@ -30,9 +40,6 @@ function SocialIcon({ href, children, label, download = false }: any) {
             href={href}
             download={download}
             target={download ? undefined : "_blank"}
-            /* Background: var(--color-text-primary) is your #111110 
-               Border: var(--color-border-strong) is your #2A2A28
-            */
             className="w-14 h-14 flex items-center justify-center bg-[var(--color-text-primary)] text-white rounded-md hover:bg-[var(--color-accent-warm)] transition-all shadow-md border border-[var(--color-border-strong)]"
             aria-label={label}
         >

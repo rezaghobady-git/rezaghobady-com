@@ -1,8 +1,11 @@
 "use client";
 import { useEffect } from "react";
 import { getCalApi } from "@calcom/embed-react";
+import { useTranslations } from "next-intl"; // 1. Import the hook
 
 export function HeroEditorial() {
+    const t = useTranslations('Moi'); // 2. Initialize the hook
+
     return (
         <section className="w-full flex flex-col items-center text-center mt-0 pt-0">
             {/* Profile Image */}
@@ -10,7 +13,7 @@ export function HeroEditorial() {
                 <img src="/reza-profile.jpg" alt="Reza" className="w-full h-full object-cover" />
             </div>
 
-            {/* NAME: Still using DM Sans via inline to keep it separate */}
+            {/* NAME */}
             <h1 className="text-xl md:text-3xl mb-1 tracking-tight"
                 style={{
                     color: 'var(--color-text-primary)',
@@ -20,10 +23,10 @@ export function HeroEditorial() {
                 Reza Ghobady
             </h1>
 
-            {/* BIO: Now using the 'hero-bio' class defined in your CSS */}
+            {/* BIO: Translated */}
             <p className="hero-bio max-w-[240px] md:max-w-md opacity-90 mx-auto"
                 style={{ color: 'var(--color-text-secondary)' }}>
-                I build AI-powered revenue systems for agencies and B2B businesses.
+                {t('heroSubtitle')} {/* 3. Use the translation key */}
             </p>
         </section>
     );

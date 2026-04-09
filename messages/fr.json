@@ -219,5 +219,26 @@
             "body3": "Si vous êtes à un stade moins avancé et souhaitez bâtir une infrastructure saine dès le départ, nous pouvons également en discuter.",
             "ctaAbout": "À propos de Reza →"
         }
+    },
+    "Moi": {
+        "heroSubtitle": "Je construis des systèmes de revenus alimentés par l'IA pour les agences et les entreprises B2B.",
+        "leadMagnet": {
+            "url": "https://kaavops.com/revenue-leak-free-diagnostic-tool/",
+            "label": "Ressource Gratuite",
+            "title": "Audit des Fuites de Revenus",
+            "description": "Cessez de deviner où votre croissance stagne. En 18 questions, identifiez précisément où vous perdez des prospects."
+        },
+        "booking": {
+            "calLink": "reza.ghobady/appel-strategie-30min",
+            "label": "Commencer une conversation",
+            "title": "Construisez votre système",
+            "description": "Planifiez votre appel stratégique gratuit."
+        },
+        "article": {
+            "url": "/writing/ai-without-hype",
+            "label": "Dernières Publications",
+            "title": "L'IA sans le battage médiatique",
+            "description": "Ce qui fonctionne vraiment en automatisation IA — et ce qui ne fonctionne pas."
+        }
     }
 }

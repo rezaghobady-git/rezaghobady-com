@@ -51,7 +51,10 @@
         "tagline": "AI automation for agencies and B2B service providers.",
         "description": "We work with founders who have already found product-market fit and need infrastructure to match their ambition. The audit takes one week. The systems run for years.",
         "details": "English and French. Remote-friendly.",
-        "cta": "See how it works",
+        "cta": {
+            "primary": "See how it works",
+            "secondary": "kaavops.com"
+        },
         "url": "kaavops.com ↗"
     },
     "Writing": {
@@ -215,6 +218,27 @@
             "ctaWork": "Work with KaavOps",
             "ctaContact": "Get in touch",
             "ctaWriting": "Read my writing →"
+        }
+    },
+    "Moi": {
+        "heroSubtitle": "I build AI-powered revenue systems for agencies and B2B businesses.",
+        "leadMagnet": {
+            "url": "https://kaavops.com/revenue-leak-free-diagnostic-tool/",
+            "label": "Free Resource",
+            "title": "The Revenue Leak Audit",
+            "description": "Stop guessing where your growth is stalling. In 18 questions, pinpoint exactly where you’re losing leads."
+        },
+        "booking": {
+            "calLink": "reza.ghobady/30min-strategy-call",
+            "label": "Get Started",
+            "title": "Build Your System",
+            "description": "Schedule your free strategy call."
+        },
+        "article": {
+            "url": "/writing/ai-without-hype",
+            "label": "Latest Writing",
+            "title": "AI Without the Hype",
+            "description": "Practical AI planning for real businesses."
         }
     }
 }

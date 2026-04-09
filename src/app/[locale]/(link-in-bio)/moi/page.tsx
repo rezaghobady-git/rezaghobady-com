@@ -1,86 +1,63 @@
 "use client";
 
-import { useEffect } from "react";
+import { useTranslations } from 'next-intl';
 import { HeroEditorial } from "./sections/HeroEditorial";
 import SocialLinks from "./sections/SocialLinks";
 
 export default function MoiPage() {
-    // 1. THE CSS HACK: Hides Nav and Footer on this specific page
-    useEffect(() => {
-        // 1. Target standard semantic tags
-        const nav = document.querySelector('nav');
-        const footer = document.querySelector('footer');
-        const header = document.querySelector('header'); // Most logos/site names live here
-
-        // 2. Target common class patterns if semantic tags aren't used
-        const logoHeader = document.querySelector('[class*="Navbar"]');
-        const siteBranding = document.querySelector('[class*="Logo"]');
-
-        const elementsToHide = [nav, footer, header, logoHeader, siteBranding];
-
-        elementsToHide.forEach(el => {
-            if (el instanceof HTMLElement) el.style.display = 'none';
-        });
-
-        return () => {
-            elementsToHide.forEach(el => {
-                if (el instanceof HTMLElement) el.style.display = '';
-            });
-        };
-    }, []);
+    // 1. CALL HOOKS AT THE TOP
+    const t = useTranslations('Moi');
 
     return (
-        /* Reduced pt-4 to pt-2 for mobile. 
-           This moves the image significantly closer to the top of the screen.
-        */
-        /* Change pt-4 to pt-0 for mobile, md:pt-8 for desktop */
-        /* Reduced pt-0 to pt-1 on mobile. 
-   Added gap-1 to SocialLinks to keep them tight.
-*/
-        <div className="min-h-screen flex flex-col items-center pt-1 md:pt-6 pb-12 px-4 md:px-6" style={{ backgroundColor: 'var(--color-bg)' }}>
-
-            <style dangerouslySetInnerHTML={{
-                __html: `
-                nav, footer, header, [class*="nav"], [class*="footer"], [class*="Header"] { 
-                    display: none !important; 
-                }
-            `}} />
+        <div className="min-h-screen flex flex-col items-center pt-1 md:pt-6 pb-12 px-4 md:px-6"
+            style={{ backgroundColor: 'var(--color-bg)' }}>
 
             <HeroEditorial />
 
-            {/* Reduce margin-top of SocialLinks component if possible, 
-        or wrap it in a div with mt-2 
-    */}
             <div className="mt-2 md:mt-4">
                 <SocialLinks />
             </div>
 
-            {/* Pulled the main stack up even more with mt-4 */}
             <main className="w-full max-w-[640px] mt-4 md:mt-8 flex flex-col gap-3 md:gap-4">
-                {/* Container 1, 2, 3 */}
 
                 {/* CONTAINER 1: LEAD MAGNET */}
-                <a href="#" className="group flex items-center p-4 md:p-6 border border-[var(--color-border)] rounded-xl transition-all hover:border-[var(--color-accent-warm)] bg-[var(--color-surface)]">
+                <a
+                    href={t('leadMagnet.url')}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center p-4 md:p-6 border border-[var(--color-border)] rounded-xl transition-all hover:border-[var(--color-accent-warm)] bg-[var(--color-surface)]"
+                >
+                    {/* Left: Icon */}
                     <div className="w-[40px] h-[40px] md:w-[50px] md:h-[50px] min-w-[40px] md:min-w-[50px] bg-[var(--color-bg)] rounded-md flex items-center justify-center border border-[var(--color-border)]">
                         <svg className="w-5 h-5 md:w-6 md:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /></svg>
                     </div>
+
+                    {/* Middle: Content */}
                     <div className="flex-1 px-4 md:px-6 text-left">
-                        <span className="text-[9px] md:text-[9px] uppercase tracking-[0.2em] text-[var(--color-text-muted)] font-medium">Free Resource</span>
-                        <h2 className="text-lg md:text-[21px] font-serif text-[var(--color-text-primary)] leading-tight mt-0.5 md:mt-1">Scale Like a Venture</h2>
-                        <p className="text-xs md:text-[13px] text-[var(--color-text-secondary)] font-sans mt-0.5 md:mt-1">How AI transforms small business growth.</p>
+                        <span className="text-[9px] uppercase tracking-[0.2em] text-[var(--color-text-muted)] font-medium">
+                            {t('leadMagnet.label')}
+                        </span>
+                        <h2 className="text-lg md:text-[21px] font-serif text-[var(--color-text-primary)] leading-tight mt-0.5 md:mt-1">
+                            {t('leadMagnet.title')}
+                        </h2>
+                        <p className="text-xs md:text-[13px] text-[var(--color-text-secondary)] font-sans mt-0.5 md:mt-1">
+                            {t('leadMagnet.description')}
+                        </p>
                     </div>
+
+                    {/* Right: Arrow */}
                     <div className="w-8 h-8 md:w-10 md:h-10 min-w-[32px] rounded-full border border-[var(--color-border)] flex items-center justify-center group-hover:bg-[var(--color-accent)] group-hover:text-white transition-all">
                         <svg className="w-3.5 h-3.5 md:w-[18px] md:h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
                     </div>
                 </a>
 
-                {/* CONTAINER 2: WORK WITH ME (Fixing invisible text/icon) */}
+                {/* CONTAINER 2: WORK WITH ME */}
                 <button
-                    data-cal-link="reza.ghobady/30min-strategy-call"
+                    data-cal-link={t('booking.calLink')}
                     className="group flex items-center p-4 md:p-6 rounded-xl transition-all text-left border border-[var(--color-border)] hover:border-[var(--color-text-primary)] cursor-pointer"
                     style={{ backgroundColor: '#EAEAEA' }}
                 >
-                    {/* Left: Icon - Forced to #111110 */}
+                    {/* Left: Icon */}
                     <div className="w-[40px] h-[40px] md:w-[50px] md:h-[50px] min-w-[40px] md:min-w-[50px] bg-black/5 rounded-md flex items-center justify-center"
                         style={{ color: 'var(--color-text-primary)' }}>
                         <svg className="w-5 h-5 md:w-6 md:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -90,23 +67,23 @@ export default function MoiPage() {
                         </svg>
                     </div>
 
-                    {/* Middle: Content - Forced to #111110 and #4A4A45 */}
+                    {/* Middle: Content */}
                     <div className="flex-1 px-4 md:px-6">
-                        <span className="text-[9px] md:text-[9px] uppercase tracking-[0.2em] font-medium"
+                        <span className="text-[9px] uppercase tracking-[0.2em] font-medium"
                             style={{ color: 'var(--color-text-muted)' }}>
-                            Get Started
+                            {t('booking.label')}
                         </span>
                         <h2 className="text-lg md:text-[21px] font-serif leading-tight mt-0.5 md:mt-1"
                             style={{ color: 'var(--color-text-primary)' }}>
-                            Build Your System
+                            {t('booking.title')}
                         </h2>
                         <p className="text-xs md:text-[13px] font-sans mt-0.5 md:mt-1"
                             style={{ color: 'var(--color-text-secondary)' }}>
-                            Schedule your free strategy call.
+                            {t('booking.description')}
                         </p>
                     </div>
 
-                    {/* Right: Arrow - Bordered by #2A2A28, Fills with #111110 on hover */}
+                    {/* Right: Arrow */}
                     <div className="w-8 h-8 md:w-10 md:h-10 min-w-[32px] rounded-full border border-[var(--color-border-strong)] flex items-center justify-center transition-all group-hover:bg-[var(--color-text-primary)] group-hover:text-white"
                         style={{ color: 'var(--color-text-primary)' }}>
                         <svg className="w-3.5 h-3.5 md:w-[18px] md:h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -116,24 +93,38 @@ export default function MoiPage() {
                 </button>
 
                 {/* CONTAINER 3: LATEST ARTICLE */}
-                <a href="#" className="group flex items-center p-4 md:p-6 border border-[var(--color-border)] rounded-xl transition-all hover:border-[var(--color-accent-warm)] bg-[var(--color-surface)]">
+                <a
+                    href={t('article.url')}
+                    className="group flex items-center p-4 md:p-6 border border-[var(--color-border)] rounded-xl transition-all hover:border-[var(--color-accent-warm)] bg-[var(--color-surface)]"
+                >
+                    {/* Left: Icon */}
                     <div className="w-[40px] h-[40px] md:w-[50px] md:h-[50px] min-w-[40px] md:min-w-[50px] bg-[var(--color-bg)] rounded-md flex items-center justify-center text-[var(--color-text-primary)] border border-[var(--color-border)]">
                         <svg className="w-5 h-5 md:w-6 md:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" /><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" /></svg>
                     </div>
+
+                    {/* Middle: Content */}
                     <div className="flex-1 px-4 md:px-6 text-left">
-                        <span className="text-[9px] md:text-[9px] uppercase tracking-[0.2em] text-[var(--color-text-muted)] font-medium">Latest Writing</span>
-                        <h2 className="text-lg md:text-[21px] font-serif text-[var(--color-text-primary)] leading-tight mt-0.5 md:mt-1">AI Without the Hype</h2>
-                        <p className="text-xs md:text-[13px] text-[var(--color-text-secondary)] font-sans mt-0.5 md:mt-1">Practical AI planning for real businesses.</p>
+                        <span className="text-[9px] uppercase tracking-[0.2em] text-[var(--color-text-muted)] font-medium">
+                            {t('article.label')}
+                        </span>
+                        <h2 className="text-lg md:text-[21px] font-serif text-[var(--color-text-primary)] leading-tight mt-0.5 md:mt-1">
+                            {t('article.title')}
+                        </h2>
+                        <p className="text-xs md:text-[13px] text-[var(--color-text-secondary)] font-sans mt-0.5 md:mt-1">
+                            {t('article.description')}
+                        </p>
                     </div>
+
+                    {/* Right: Arrow */}
                     <div className="w-8 h-8 md:w-10 md:h-10 min-w-[32px] rounded-full border border-[var(--color-border)] flex items-center justify-center group-hover:bg-[var(--color-accent)] group-hover:text-white transition-all">
                         <svg className="w-3.5 h-3.5 md:w-[18px] md:h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
                     </div>
                 </a>
-                {/* Updated Footer: Reduced mt-20 to mt-8 and pt-8 to pt-4 */}
-                {/* Removed border-t and reduced mt-8 to mt-4 */}
+
+                {/* Footer Section */}
                 <div className="mt-4 md:mt-8 flex flex-col items-center gap-2 pb-8 w-full max-w-[640px]">
                     <div className="flex gap-6">
-                        <a href="https://kaavops.com" target="_blank" className="text-[9px] uppercase tracking-[0.2em] text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)] font-medium">
+                        <a href="https://kaavops.com" target="_blank" rel="noopener noreferrer" className="text-[9px] uppercase tracking-[0.2em] text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)] font-medium">
                             KaavOps
                         </a>
                         <a href="https://rezaghobady.com" className="text-[9px] uppercase tracking-[0.2em] text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)] font-medium">
