@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { getAllPostMetas } from "@/lib/blog";
 import type { PostMeta, PostCategory } from "@/lib/blog";
 
@@ -68,7 +68,7 @@ interface BlogIndexProps {
 
 export default async function BlogIndex({ searchParams }: BlogIndexProps) {
   const { category } = await searchParams;
-  const allPosts = getAllPostMetas();
+  const allPosts = await getAllPostMetas();
 
   const activeCategory = CATEGORIES.find((c) => c === category) ?? null;
   const posts = activeCategory

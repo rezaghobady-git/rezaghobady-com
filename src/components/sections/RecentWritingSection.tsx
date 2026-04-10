@@ -1,12 +1,9 @@
-import { Link } from "@/i18n/navigation"; // Use localized Link
+import { getTranslations, getFormatter } from 'next-intl/server';
+import { Link } from "@/i18n/navigation";
 import { getRecentPosts } from "@/lib/blog";
 import type { PostMeta } from "@/lib/blog";
-import { useTranslations, useFormatter, useLocale } from 'next-intl';
 
-function PostRow({ post }: { post: PostMeta }) {
-  const format = useFormatter();
-  const locale = useLocale();
-
+function PostRow({ post, formattedDate }: { post: PostMeta; formattedDate: string }) {
   return (
     <Link
       href={`/blog/${post.slug}`}
@@ -27,12 +24,7 @@ function PostRow({ post }: { post: PostMeta }) {
           className="label shrink-0"
           style={{ color: "var(--color-text-muted)" }}
         >
-          {/* Automatically formats date based on locale (en-GB vs fr-FR) */}
-          {format.dateTime(new Date(post.date), {
-            day: 'numeric',
-            month: 'long',
-            year: 'numeric'
-          })}
+          {formattedDate}
         </span>
       </div>
       <p
@@ -45,16 +37,16 @@ function PostRow({ post }: { post: PostMeta }) {
         className="mt-3 label post-category"
         style={{ color: "var(--color-accent-warm)" }}
       >
-        {/* If category is also translated in Keystatic, use post.category */}
         {post.category}
       </p>
     </Link>
   );
 }
 
-export default function RecentWritingSection() {
-  const t = useTranslations('Writing');
-  const posts = getRecentPosts(3);
+export default async function RecentWritingSection() {
+  const t = await getTranslations('Writing');
+  const format = await getFormatter();
+  const posts = await getRecentPosts(3);
 
   return (
     <section className="py-20 md:py-32 px-6 md:px-10">
@@ -77,16 +69,21 @@ export default function RecentWritingSection() {
         {posts.length > 0 ? (
           <div>
             {posts.map((post) => (
-              <PostRow key={post.slug} post={post} />
+              <PostRow
+                key={post.slug}
+                post={post}
+                formattedDate={format.dateTime(new Date(post.date), {
+                  day: 'numeric',
+                  month: 'long',
+                  year: 'numeric',
+                })}
+              />
             ))}
             <div
               className="border-t pt-6"
               style={{ borderColor: "var(--color-border)" }}
             >
-              <Link
-                href="/blog"
-                className="btn-ghost text-sm"
-              >
+              <Link href="/blog" className="btn-ghost text-sm">
                 {t('viewAll')}
               </Link>
             </div>
@@ -97,7 +94,6 @@ export default function RecentWritingSection() {
             style={{ borderColor: "var(--color-border)" }}
           >
             <p className="text-sm" style={{ color: "var(--color-text-muted)" }}>
-              {/* Add a key for this in your JSON if you want to localize it */}
               Writing coming soon.
             </p>
           </div>

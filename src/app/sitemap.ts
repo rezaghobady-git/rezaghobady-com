@@ -4,7 +4,7 @@ import { getAllPostMetas } from "@/lib/blog";
 const BASE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://rezaghobady.com";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes: MetadataRoute.Sitemap = [
     {
       url: BASE_URL,
@@ -38,7 +38,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  const postRoutes: MetadataRoute.Sitemap = getAllPostMetas().map((post) => ({
+  const posts = await getAllPostMetas();
+  const postRoutes: MetadataRoute.Sitemap = posts.map((post) => ({
     url: `${BASE_URL}/blog/${post.slug}`,
     lastModified: new Date(post.date),
     changeFrequency: "monthly" as const,

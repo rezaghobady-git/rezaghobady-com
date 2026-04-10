@@ -2,7 +2,7 @@ import { config, collection, fields } from "@keystatic/core";
 
 export default config({
   storage:
-    process.env.KEYSTATIC_STORAGE_KIND === "local"
+    process.env.NEXT_PUBLIC_KEYSTATIC_STORAGE_KIND === "local"
       ? { kind: "local" }
       : {
           kind: "github",
