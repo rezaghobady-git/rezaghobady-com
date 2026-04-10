@@ -1,11 +1,13 @@
 import { ReactNode } from 'react';
+import Nav from '../../../components/layout/Nav';
+import Footer from '../../../components/layout/Footer';
 
 export default function SiteLayout({ children }: { children: ReactNode }) {
-  // Remove <Nav /> and <Footer /> from here!
-  // They are already being provided by the parent layout.
-  return (
-    <>
-      {children}
-    </>
-  );
+    return (
+        <>
+            <Nav />
+            <main>{children}</main>
+            <Footer />
+        </>
+    );
 }

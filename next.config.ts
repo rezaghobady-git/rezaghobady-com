@@ -13,11 +13,8 @@ const nextConfig: NextConfig = {
     position: 'bottom-right',
   },
 
-  // 3. Top-level Network Bypass
-  // We use @ts-ignore because your @types/next version hasn't updated its definitions 
-  // for this new top-level key yet, but the Next.js engine NEEDS it here.
-  // @ts-ignore
-  allowedDevOrigins: ['192.168.1.168:3000', 'localhost:3000'],
+  // 3. Allow LAN access for mobile device testing
+  allowedDevOrigins: ['192.168.1.168'],
 
   // 4. Leave experimental empty to avoid "Unrecognized key" terminal warnings
   experimental: {},

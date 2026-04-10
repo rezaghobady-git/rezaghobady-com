@@ -1,9 +1,9 @@
 import { ReactNode } from 'react';
 import { getMessages } from 'next-intl/server';
 import { NextIntlClientProvider } from 'next-intl';
-import Nav from '../../components/layout/Nav';
-import Footer from '../../components/layout/Footer';
 import '../../styles/globals.css';
+
+export const dynamic = 'force-dynamic';
 
 type Props = {
     children: ReactNode;
@@ -16,15 +16,9 @@ export default async function LocaleLayout({ children, params }: Props) {
 
     return (
         <html lang={locale} suppressHydrationWarning>
-            {/* suppressHydrationWarning here is the industry standard for i18n apps */}
             <body className="antialiased" suppressHydrationWarning>
-                <NextIntlClientProvider
-                    messages={messages}
-                    locale={locale}
-                >
-                    <Nav />
-                    <main>{children}</main>
-                    <Footer />
+                <NextIntlClientProvider messages={messages} locale={locale}>
+                    {children}
                 </NextIntlClientProvider>
             </body>
         </html>

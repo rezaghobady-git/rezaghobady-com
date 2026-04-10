@@ -7,7 +7,7 @@ export function HeroEditorial() {
     const t = useTranslations('Moi'); // 2. Initialize the hook
 
     return (
-        <section className="w-full flex flex-col items-center text-center mt-0 pt-0">
+        <section className="w-full flex flex-col items-center text-center mt-0 pt-3 md:pt-0">
             {/* Profile Image */}
             <div className="w-20 h-20 md:w-24 md:h-24 mb-2 md:mb-3 rounded-full overflow-hidden flex items-center justify-center relative border border-[var(--color-border-strong)] shadow-sm">
                 <img src="/reza-profile.jpg" alt="Reza" className="w-full h-full object-cover" />

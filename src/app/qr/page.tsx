@@ -1,15 +1,12 @@
 "use client";
 
-// This forces Vercel to use the standard Node.js engine instead of Edge
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
-import Image from 'next/image';
 import Link from 'next/link';
-import { QRCodeSVG } from 'qrcode.react';
+import nextDynamic from 'next/dynamic';
 
-// Do NOT add 'export const runtime' here. 
-// Let the root layout/config handle the runtime.
+const QRCodeSVG = nextDynamic(() => import('qrcode.react').then(m => m.QRCodeSVG), { ssr: false });
 
 export default function QRCodePage() {
     return (

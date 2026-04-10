@@ -474,8 +474,3 @@ p {
   text-align: center;
 }
 
-body:has(.link-in-bio-wrapper) header,
-body:has(.link-in-bio-wrapper) nav,
-body:has(.link-in-bio-wrapper) footer {
-  display: none !important;
-}
