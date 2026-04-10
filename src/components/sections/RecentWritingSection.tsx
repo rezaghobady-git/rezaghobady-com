@@ -1,16 +1,12 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation"; // Use localized Link
 import { getRecentPosts } from "@/lib/blog";
 import type { PostMeta } from "@/lib/blog";
-
-function formatDate(dateStr: string): string {
-  return new Date(dateStr).toLocaleDateString("en-GB", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
-}
+import { useTranslations, useFormatter, useLocale } from 'next-intl';
 
 function PostRow({ post }: { post: PostMeta }) {
+  const format = useFormatter();
+  const locale = useLocale();
+
   return (
     <Link
       href={`/blog/${post.slug}`}
@@ -31,7 +27,12 @@ function PostRow({ post }: { post: PostMeta }) {
           className="label shrink-0"
           style={{ color: "var(--color-text-muted)" }}
         >
-          {formatDate(post.date)}
+          {/* Automatically formats date based on locale (en-GB vs fr-FR) */}
+          {format.dateTime(new Date(post.date), {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric'
+          })}
         </span>
       </div>
       <p
@@ -44,6 +45,7 @@ function PostRow({ post }: { post: PostMeta }) {
         className="mt-3 label post-category"
         style={{ color: "var(--color-accent-warm)" }}
       >
+        {/* If category is also translated in Keystatic, use post.category */}
         {post.category}
       </p>
     </Link>
@@ -51,15 +53,15 @@ function PostRow({ post }: { post: PostMeta }) {
 }
 
 export default function RecentWritingSection() {
+  const t = useTranslations('Writing');
   const posts = getRecentPosts(3);
 
   return (
     <section className="py-20 md:py-32 px-6 md:px-10">
       <div className="mx-auto max-w-3xl">
-        {/* Section header */}
         <div className="mb-2">
           <p className="label" style={{ color: "var(--color-text-muted)" }}>
-            — Writing
+            {t('label')}
           </p>
           <h2
             className="mt-3 text-3xl md:text-4xl"
@@ -68,17 +70,15 @@ export default function RecentWritingSection() {
               color: "var(--color-text-primary)",
             }}
           >
-            Recent writing
+            {t('headline')}
           </h2>
         </div>
 
-        {/* Posts list */}
         {posts.length > 0 ? (
           <div>
             {posts.map((post) => (
               <PostRow key={post.slug} post={post} />
             ))}
-            {/* Final divider */}
             <div
               className="border-t pt-6"
               style={{ borderColor: "var(--color-border)" }}
@@ -87,7 +87,7 @@ export default function RecentWritingSection() {
                 href="/blog"
                 className="btn-ghost text-sm"
               >
-                All writing →
+                {t('viewAll')}
               </Link>
             </div>
           </div>
@@ -97,6 +97,7 @@ export default function RecentWritingSection() {
             style={{ borderColor: "var(--color-border)" }}
           >
             <p className="text-sm" style={{ color: "var(--color-text-muted)" }}>
+              {/* Add a key for this in your JSON if you want to localize it */}
               Writing coming soon.
             </p>
           </div>

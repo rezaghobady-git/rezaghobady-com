@@ -1,0 +1,37 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(yes)",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --no-turbopack)",
+      "Bash(ls \"d:/Reza/Documents/GitHub/rezaghobady-com/{.claude,docs/\")",
+      "Read(//tmp/**)",
+      "Bash(npm install:*)",
+      "Bash(mkdir -p d:/Reza/Documents/GitHub/rezaghobady-com/src/styles)",
+      "Bash(mkdir -p d:/Reza/Documents/GitHub/rezaghobady-com/src/components/ui)",
+      "Bash(mkdir -p d:/Reza/Documents/GitHub/rezaghobady-com/src/components/layout)",
+      "Bash(mkdir -p d:/Reza/Documents/GitHub/rezaghobady-com/src/components/sections)",
+      "Bash(mkdir -p d:/Reza/Documents/GitHub/rezaghobady-com/src/content/blog)",
+      "Bash(netstat -ano)",
+      "Bash(findstr :3000)",
+      "Bash(npx tinacms:*)",
+      "Bash(npm uninstall:*)",
+      "Bash(mkdir -p \"d:/Reza/Documents/GitHub/rezaghobady-com/src/app/api/keystatic/[...params]\")",
+      "Bash(mkdir -p \"d:/Reza/Documents/GitHub/rezaghobady-com/src/app/keystatic/[[...params]]\")",
+      "Bash(npm ls:*)",
+      "Bash(npm prune:*)",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(json.dumps\\(list\\(d.get\\(''''exports'''',{}\\).keys\\(\\)\\), indent=2\\)\\)\")",
+      "Bash(node -e \"const p = require\\(''./node_modules/@keystatic/next/package.json''\\); console.log\\(p.version\\)\")",
+      "Bash(node -e \"const m = require\\(''./node_modules/@keystatic/next/dist/keystatic-next-ui-app.js''\\); console.log\\(Object.keys\\(m\\)\\)\")",
+      "Read(//mnt/c/Users/rezam/AppData/Local/Temp/claude/d--Reza-Documents-GitHub-rezaghobady-com/e9172335-2670-4dee-9d29-fc5efa59cd20/tasks/**)",
+      "Bash(echo \"EXIT: $?\")",
+      "Bash(cmd.exe /c \"taskkill /PID 25008 /F\")",
+      "Bash(node -e \"const p=require\\(''./node_modules/@keystatic/next/package.json''\\); const uiApp = p.exports[''./ui/app'']; console.log\\(JSON.stringify\\(uiApp, null, 2\\)\\)\")",
+      "Read(//c/Users/rezam/AppData/Local/npm-cache/_logs/**)",
+      "Bash(npm cache:*)",
+      "Bash(npx npm@10 install)"
+    ],
+    "additionalDirectories": [
+      "d:\\Reza\\Documents\\GitHub\\rezaghobady-com\\src\\app\\blog"
+    ]
+  }
+}

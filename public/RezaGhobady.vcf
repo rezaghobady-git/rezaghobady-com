@@ -1,0 +1,21 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Reza Ghobady
+
+# Multiple Emails
+EMAIL;TYPE=INTERNET,WORK:reza.ghobady@kaavops.com
+EMAIL;TYPE=INTERNET,HOME:moi@rezaghobady.com
+
+# Multiple URLs
+URL;TYPE=WORK:https://kaavops.com
+URL;TYPE=Portfolio:https://rezaghobady.com
+URL;TYPE=LinkedIn:hhttps://www.linkedin.com/in/rezaghobady/
+
+# Social Media (X/Twitter example)
+X-SOCIALPROFILE;TYPE=X/Twitter:https://x.com/rezamgm
+
+ORG:KaavOps
+TITLE:Founder
+TEL;TYPE=CELL,VOICE,MSG:+33768631096
+URL:https://rezaghobady.com
+END:VCARD

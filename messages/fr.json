@@ -1,0 +1,244 @@
+{
+    "Metadata": {
+        "title": "Reza Ghobady",
+        "description": "Je conçois des systèmes de revenus propulsés par l'IA..."
+    },
+    "Nav": {
+        "about": "À propos",
+        "work": "Mon Travail",
+        "services": "Services",
+        "contact": "Contact"
+    },
+    "Hero": {
+        "location": "— Paris",
+        "title": "Simplifiez votre pensée.",
+        "subtitle": "Bâtissez des systèmes.",
+        "description": "Laissez-les piloter votre entreprise.",
+        "body": "Je conçois des systèmes de revenus basés sur l'IA pour les agences et les entreprises de services B2B — afin que les fondateurs puissent se concentrer sur le travail que eux seuls peuvent accomplir. Basé à Paris. Fondateur de <kaav>KaavOps</kaav> et <simine>Simine Paris</simine>.",
+        "ctaWork": "Travailler avec KaavOps",
+        "ctaAbout": "À mon sujet"
+    },
+    "Problem": {
+        "label": "Le Problème",
+        "headline": "La plupart des entreprises de services sont bâties autour de leurs fondateurs.",
+        "subheadline": "Votre flux de clients fonctionne parce que vous le travaillez. Votre prestation a lieu parce que vous la supervisez. Vous êtes le moteur, mais aussi le goulot d'étranglement.",
+        "points": {
+            "bottleneck": "Les fondateurs passent 60% de leur temps sur des tâches répétitives.",
+            "scaling": "Les revenus stagnent car il n'y a qu'un nombre limité d'heures dans votre journée.",
+            "freedom": "Si vous arrêtez de travailler, le système arrête de croître."
+        }
+    },
+    "HomeServices": {
+        "label": "— Ce que je fais",
+        "headline": "Je bâtis les systèmes que vous gérez manuellement.",
+        "subheadline": "Via KaavOps, je conçois et déploie des infrastructures de revenus dopées à l'IA pour les agences et prestataires B2B ayant validé leur product-market fit et ayant besoin d'une structure à la hauteur.",
+        "list": "lead-gen,onboarding,retention",
+        "lead-gen": {
+            "title": "Génération de leads",
+            "description": "Des systèmes automatisés de prospection et de qualification qui identifient les bons prospects en continu — sans que vous ayez à gérer le processus."
+        },
+        "onboarding": {
+            "title": "Onboarding client",
+            "description": "Des flux de travail structurés qui mènent un nouveau client de la signature à l'opérationnel sans solliciter votre attention à chaque étape."
+        },
+        "retention": {
+            "title": "Suivi & fidélisation",
+            "description": "Des séquences qui maintiennent l'engagement client, détectent les opportunités d'upsell et gèrent les renouvellements avant qu'ils ne deviennent une charge mentale."
+        }
+    },
+    "KaavOpsHome": {
+        "label": "— KaavOps",
+        "tagline": "Automatisation IA pour agences et prestataires B2B.",
+        "description": "Nous accompagnons les fondateurs ayant déjà trouvé leur product-market fit et nécessitant une infrastructure à la hauteur de leurs ambitions. L'audit prend une semaine. Les systèmes tournent des années.",
+        "details": "Anglais et Français. Adapté au télétravail.",
+        "cta": {
+            "primary": "Voir comment ça fonctionne",
+            "secondary": "kaavops.com"
+        },
+        "url": "kaavops.com ↗"
+    },
+    "Writing": {
+        "label": "— Écrits",
+        "headline": "Articles récents",
+        "viewAll": "Tous les articles →",
+        "posts": {
+            "revenue": {
+                "title": "Bâtir des systèmes de revenus avec l'IA — Ce qui fonctionne vraiment",
+                "date": "10 mars 2026",
+                "tag": "IA",
+                "excerpt": "La plupart des projets d'automatisation IA échouent au même point : le passage de relais entre les systèmes. Voici ce que j'ai appris en bâtissant des infrastructures de revenus."
+            },
+            "art": {
+                "title": "Pourquoi l'art contemporain iranien doit être au centre de la conversation européenne",
+                "date": "18 février 2026",
+                "tag": "Art",
+                "excerpt": "Les artistes iraniens produisent aujourd'hui des œuvres parmi les plus urgentes. La question n'est pas de savoir si l'Europe est prête — mais si nous avons le courage de les présenter dignement."
+            },
+            "tools": {
+                "title": "Les outils que j'utilise pour gérer deux entreprises en solo",
+                "date": "29 janvier 2026",
+                "tag": "Outils",
+                "excerpt": "Un compte rendu direct de ma stack — n8n, Claude Code, ClickUp, et quelques autres — et pourquoi chacun y a gagné sa place."
+            }
+        }
+    },
+    "Newsletter": {
+        "label": "— Newsletter",
+        "headline": "Si votre business semble plus dur qu'il ne devrait l'être :",
+        "subheadline": "Commencez ici.",
+        "description": "J'écris sur la pensée systémique, l'automatisation IA et la création d'entreprises qui ne dépendent pas de votre présence. Pas de promesse de fréquence — seulement quand j'ai quelque chose d'utile à dire.",
+        "placeholder": "votre@email.com",
+        "button": "Commencez ici",
+        "disclaimer": "Pas de spam. Désinscription à tout moment."
+    },
+    "AboutPage": {
+        "Metadata": {
+            "title": "À propos — Reza Ghobady",
+            "description": "Je bâtis des choses qui fonctionnent sans moi. Fondateur de KaavOps et Simine Paris."
+        },
+        "Header": {
+            "label": "— À propos",
+            "title": "Je bâtis des choses qui fonctionnent sans moi.",
+            "description": "Chez KaavOps, je conçois des systèmes de revenus basés sur l'IA pour les agences et les prestataires B2B. Chez Simine Paris, je dirige une galerie d'art contemporain dédiée aux artistes iraniens. Je travaille en solo, j'avance délibérément et je privilégie la profondeur à la rapidité."
+        },
+        "Story": {
+            "label": "— Parcours",
+            "title": "Mon cheminement",
+            "body1": "Racines iraniennes, vie parisienne. Je suis basé en France depuis assez longtemps pour m'y sentir chez moi, tout en restant assez proche de l'Iran pour que cela demeure essentiel.",
+            "body2": "Mon parcours vient du monde des affaires et de l'art, pas de l'ingénierie. Je suis autodidacte en technologie — ce qui signifie que j'aborde le logiciel avec une préférence marquée pour la clarté plutôt que pour la complexité inutile.",
+            "body3": "KaavOps est né en observant les fondateurs de mon réseau diriger des entreprises qui dépendaient entièrement de leur présence. Je n'ai cessé de me dire : c'est un problème d'infrastructure.",
+            "body4": "Simine Paris est né d'un autre type de manque — l'absence quasi totale d'engagement sérieux et soutenu avec l'art contemporain iranien dans le milieu des galeries européennes. Nous construisons une présence."
+        },
+        "Philosophy": {
+            "label": "— Philosophie",
+            "title": "Ce en quoi je crois",
+            "list": "complexity,depth,solo,context",
+            "complexity": {
+                "title": "La complexité est souvent un échec de conception.",
+                "desc": "Quand une entreprise semble difficile à gérer, le problème est rarement l'effort. C'est l'architecture."
+            },
+            "depth": {
+                "title": "La profondeur avant la vitesse, toujours.",
+                "desc": "Je préfère comprendre un problème complètement plutôt que de livrer rapidement une solution qui répond à la mauvaise question."
+            },
+            "solo": {
+                "title": "Le modèle 'Solo' est un modèle opérationnel légitime.",
+                "desc": "Mes deux entreprises fonctionnent sans employés. C'est un choix délibéré qui force la clarté sur ce qui compte vraiment."
+            },
+            "context": {
+                "title": "Le contexte n'est pas une note de bas de page.",
+                "desc": "En automatisation : la différence entre un système utile et un système rentable est un problème de design, pas de technologie."
+            }
+        },
+        "Now": {
+            "label": "— En ce moment",
+            "title": "Sur quoi je travaille",
+            "body": "Développement du système d'onboarding v2 pour les clients KaavOps. Préparation du prochain programme d'exposition Simine Paris pour l'automne 2026. Développement de ce site avec Claude Code.",
+            "stackLabel": "Stack actuelle",
+            "stack": {
+                "n8n": "Orchestration d'automatisation",
+                "Claude Code": "Développement",
+                "ClickUp": "Opérations & gestion de projet",
+                "Linear": "Suivi de projet logiciel",
+                "Notion": "Référence & documentation"
+            }
+        },
+        "Contact": {
+            "label": "— Parlons-en",
+            "title": "Si tout cela vous semble pertinent pour ce que vous bâtissez :",
+            "body": "Je parle couramment français et anglais. Je travaille à travers les réseaux de l'art, du private equity, de la gastronomie et de la mode — des contextes qui communiquent peu entre eux.",
+            "ctaWork": "Travailler avec KaavOps",
+            "ctaContact": "Me contacter",
+            "ctaWriting": "Lire mes articles →"
+        }
+    },
+    "Footer": {
+        "tagline": "Paris — Systèmes d'automatisation IA pour prestataires de services.",
+        "rights": "© {year} Reza Ghobady. Tous droits réservés.",
+        "builtWith": "Bâti avec Next.js & ❤️",
+        "socials": "Suivez-moi"
+    },
+    "ServicesPage": {
+        "Metadata": {
+            "title": "Services",
+            "description": "KaavOps conçoit des systèmes de revenus dopés à l'IA pour les agences et les prestataires B2B en France et en Europe."
+        },
+        "Header": {
+            "label": "— KaavOps",
+            "title": "Des systèmes de revenus qui tournent sans vous.",
+            "description": "Nous concevons et déployons des infrastructures d'automatisation dopées à l'IA pour les agences et prestataires B2B en France et en Europe. L'audit prend une semaine. Les systèmes tournent des années.",
+            "ctaAudit": "Réserver un audit"
+        },
+        "Systems": {
+            "label": "— Systèmes",
+            "title": "Ce que nous bâtissons",
+            "list": "lead-gen,onboarding,retention,reporting",
+            "lead-gen": {
+                "tag": "Génération de leads",
+                "description": "Prospection et qualification automatisées en continu — trouver, contacter et filtrer les prospects sans effort manuel."
+            },
+            "onboarding": {
+                "tag": "Onboarding client",
+                "description": "Flux de travail structurés qui mènent un nouveau client de la signature à l'opérationnel sans solliciter votre attention à chaque étape."
+            },
+            "retention": {
+                "tag": "Suivi & fidélisation",
+                "description": "Séquences qui maintiennent l'engagement client, détectent les opportunités d'upsell et gèrent les renouvellements avant qu'ils ne deviennent une charge mentale."
+            },
+            "reporting": {
+                "tag": "Reporting & visibilité",
+                "description": "Tableaux de bord et résumés automatisés qui vous donnent les chiffres dont vous avez besoin sans avoir à les extraire vous-même."
+            }
+        },
+        "Process": {
+            "label": "— Processus",
+            "title": "Comment ça fonctionne",
+            "steps": "01,02,03,04",
+            "01": {
+                "label": "Audit d'automatisation",
+                "body": "Nous cartographions chaque processus manuel dépendant du fondateur dans vos opérations de revenus. Une semaine. Livrable : une vision claire de ce qui peut être automatisé, l'impact attendu et ce que nous construirions."
+            },
+            "02": {
+                "label": "Conception du système",
+                "body": "Nous concevons l'infrastructure — les flux, les connexions et la logique — avant de toucher aux outils. Une bonne automatisation est d'abord un problème d'architecture."
+            },
+            "03": {
+                "label": "Construction & déploiement",
+                "body": "Nous construisons dans n8n, connecté à votre CRM, email et calendrier existants. Tout est documenté. Vous possédez entièrement les systèmes — aucune dépendance envers nous pour les maintenir."
+            },
+            "04": {
+                "label": "Accompagnement continu",
+                "body": "Disponible pour la maintenance, les extensions et la création de nouveaux systèmes à mesure que votre entreprise grandit. Aucun abonnement requis pour commencer."
+            }
+        },
+        "Fit": {
+            "label": "— Profil",
+            "title": "Pour qui est-ce fait",
+            "body1": "Agences et entreprises de services B2B ayant trouvé leur product-market fit et ayant besoin d'une infrastructure à la hauteur de leurs ambitions. Vous générez déjà des revenus. Le problème est que le processus dépend de vous.",
+            "body2": "Nous travaillons en France et en Europe, en anglais et en français. Profil client type : agence ou cabinet de conseil de 5 à 50 personnes, CA de 500k€ à 5M€, ventes menées par le fondateur avec une équipe qui a besoin que celui-ci se retire de chaque deal.",
+            "body3": "Si vous êtes à un stade moins avancé et souhaitez bâtir une infrastructure saine dès le départ, nous pouvons également en discuter.",
+            "ctaAbout": "À propos de Reza →"
+        }
+    },
+    "Moi": {
+        "heroSubtitle": "Je construis des systèmes de revenus alimentés par l'IA pour les agences et les entreprises B2B.",
+        "leadMagnet": {
+            "url": "https://kaavops.com/revenue-leak-free-diagnostic-tool/",
+            "label": "Ressource Gratuite",
+            "title": "Audit des Fuites de Revenus",
+            "description": "Cessez de deviner où votre croissance stagne. En 18 questions, identifiez précisément où vous perdez des prospects."
+        },
+        "booking": {
+            "calLink": "reza.ghobady/appel-strategie-30min",
+            "label": "Commencer une conversation",
+            "title": "Construisez votre système",
+            "description": "Planifiez votre appel stratégique gratuit."
+        },
+        "article": {
+            "url": "/writing/ai-without-hype",
+            "label": "Dernières Publications",
+            "title": "L'IA sans le battage médiatique",
+            "description": "Ce qui fonctionne vraiment en automatisation IA — et ce qui ne fonctionne pas."
+        }
+    }
+}

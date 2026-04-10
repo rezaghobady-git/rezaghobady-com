@@ -1,43 +1,9 @@
-import type { Metadata } from "next";
-import "@/styles/globals.css";
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: {
-    default: "Reza Ghobady",
-    template: "%s — Reza Ghobady",
-  },
-  description:
-    "Entrepreneur building at the intersection of AI, automation, and contemporary art. Founder of KaavOps and Simine Paris. Based in Paris.",
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://rezaghobady.com"
-  ),
-  openGraph: {
-    siteName: "Reza Ghobady",
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
+    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://rezaghobady.com'),
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en" className="h-full">
-      <body
-        className="min-h-full flex flex-col antialiased"
-        style={{ backgroundColor: "var(--color-bg)" }}
-      >
-        {children}
-      </body>
-    </html>
-  );
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+    return children;
 }

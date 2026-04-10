@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../../Dropbox/AI Projects/Articles"
+		}
+	],
+	"settings": {
+		"workbench.colorCustomizations": {},
+		"editor.fontSize": 14,
+		"editor.rulers": [],
+		"editor.renderLineHighlight": "line"
+	}
+}

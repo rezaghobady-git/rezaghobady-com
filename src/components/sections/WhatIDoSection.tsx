@@ -1,77 +1,52 @@
-const services = [
-  {
-    label: "Lead generation",
-    body: "Automated outreach and qualification systems that surface the right prospects continuously — without you managing the process.",
-  },
-  {
-    label: "Client onboarding",
-    body: "Structured workflows that take a new client from signed to operational without requiring your personal attention at each step.",
-  },
-  {
-    label: "Follow-up & retention",
-    body: "Sequences that keep clients engaged, surface upsell moments, and handle renewals before they become conversations you have to remember.",
-  },
-];
+import { useTranslations } from 'next-intl';
 
 export default function WhatIDoSection() {
+  const t = useTranslations('HomeServices');
+  // Grabs "lead-gen,onboarding,retention" from your JSON
+  const services = t('list').split(',');
+
   return (
-    <section className="py-20 md:py-32 px-6 md:px-10">
+    <section
+      className="py-20 px-6 md:px-10 border-t"
+      style={{ borderColor: "var(--color-border)" }}
+    >
       <div className="mx-auto max-w-3xl">
-        <p className="label" style={{ color: "var(--color-text-muted)" }}>
-          — What I do
+        <p className="label uppercase tracking-widest text-sm" style={{ color: "var(--color-text-muted)" }}>
+          {t('label')}
         </p>
+
         <h2
-          className="mt-3 text-3xl md:text-4xl"
-          style={{
-            fontFamily: "var(--font-serif)",
-            color: "var(--color-text-primary)",
-          }}
+          className="mt-3 text-3xl md:text-4xl font-normal"
+          style={{ fontFamily: "var(--font-serif)", color: "var(--color-text-primary)" }}
         >
-          I build the systems you&apos;re running manually.
+          {t('headline')}
         </h2>
 
-        <p
-          className="mt-6 text-sm leading-relaxed"
-          style={{ color: "var(--color-text-secondary)", maxWidth: "52ch" }}
-        >
-          Through KaavOps, I design and deploy AI-powered revenue infrastructure
-          for agencies and B2B service providers who have found product-market
-          fit and need infrastructure to match.
+        <p className="mt-6 text-sm leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>
+          {t('subheadline')}
         </p>
 
-        <div className="mt-12 flex flex-col">
-          {services.map((s, i) => (
+        <div className="mt-16">
+          {services.map((key) => (
             <div
-              key={s.label}
+              key={key}
               className="py-8 border-t"
-              style={{
-                borderColor:
-                  i === 0
-                    ? "var(--color-border-strong)"
-                    : "var(--color-border)",
-              }}
+              style={{ borderColor: "var(--color-border)" }}
             >
-              <p
+              <h3
                 className="text-base font-medium"
-                style={{
-                  fontFamily: "var(--font-serif)",
-                  color: "var(--color-text-primary)",
-                }}
+                style={{ fontFamily: "var(--font-serif)", color: "var(--color-text-primary)" }}
               >
-                {s.label}
-              </p>
+                {t(`${key}.title`)}
+              </h3>
               <p
                 className="mt-2 text-sm leading-relaxed"
-                style={{
-                  color: "var(--color-text-secondary)",
-                  maxWidth: "none",
-                }}
+                style={{ color: "var(--color-text-secondary)", maxWidth: "none" }}
               >
-                {s.body}
+                {t(`${key}.description`)}
               </p>
             </div>
           ))}
-          <div style={{ borderTop: "1px solid var(--color-border)" }} />
         </div>
       </div>
     </section>
