@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Link from "next/link";
-import { MDXRemote } from "next-mdx-remote/rsc";
+import { Link } from "@/i18n/navigation";
+import { DocumentRenderer } from "@keystatic/core/renderer";
 import { getAllPostMetas, getPostBySlug } from "@/lib/blog";
 
 interface PostPageProps {
@@ -9,14 +9,15 @@ interface PostPageProps {
 }
 
 export async function generateStaticParams() {
-  return getAllPostMetas().map((post) => ({ slug: post.slug }));
+  const posts = await getAllPostMetas();
+  return posts.map((post) => ({ slug: post.slug }));
 }
 
 export async function generateMetadata({
   params,
 }: PostPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const post = await getPostBySlug(slug);
   if (!post) return {};
   return {
     title: post.title,
@@ -34,8 +35,10 @@ function formatDate(dateStr: string): string {
 
 export default async function PostPage({ params }: PostPageProps) {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const post = await getPostBySlug(slug);
   if (!post) notFound();
+
+  const content = await post.content();
 
   return (
     <>
@@ -101,7 +104,7 @@ export default async function PostPage({ params }: PostPageProps) {
       {/* ── Post body ── */}
       <article className="px-6 md:px-10 pb-20 md:pb-32">
         <div className="mx-auto max-w-3xl prose-reza">
-          <MDXRemote source={post.content} />
+          <DocumentRenderer document={content} />
         </div>
       </article>
 

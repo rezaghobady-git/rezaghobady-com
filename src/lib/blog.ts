@@ -1,10 +1,7 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
+import { createReader } from '@keystatic/core/reader';
+import config from '../../keystatic.config';
 
-const BLOG_DIR = path.join(process.cwd(), "src/content/blog");
-
-export type PostCategory = "AI" | "Art" | "Business" | "Tools" | "Personal";
+export type PostCategory = 'AI' | 'Art' | 'Business' | 'Tools' | 'Personal';
 
 export interface PostMeta {
   slug: string;
@@ -16,60 +13,50 @@ export interface PostMeta {
 }
 
 export interface Post extends PostMeta {
-  content: string;
+  content: () => Promise<import('@keystatic/core').DocumentElement[]>;
 }
 
-function parseDate(dateStr: string): Date {
-  return new Date(dateStr);
-}
+const reader = createReader(process.cwd(), config);
 
-export function getAllPostMetas(): PostMeta[] {
-  if (!fs.existsSync(BLOG_DIR)) return [];
+export async function getAllPostMetas(): Promise<PostMeta[]> {
+  const slugs = await reader.collections.posts.list();
 
-  const files = fs.readdirSync(BLOG_DIR).filter((f) => f.endsWith(".mdx"));
-
-  const posts = files
-    .map((file) => {
-      const slug = file.replace(/\.mdx$/, "");
-      const raw = fs.readFileSync(path.join(BLOG_DIR, file), "utf-8");
-      const { data } = matter(raw);
-
+  const posts = await Promise.all(
+    slugs.map(async (slug) => {
+      const post = await reader.collections.posts.read(slug);
+      if (!post) return null;
       return {
         slug,
-        title: data.title as string,
-        date: data.date as string,
-        category: data.category as PostCategory,
-        description: data.description as string,
-        draft: (data.draft as boolean) ?? false,
+        title: post.title,
+        date: post.date ?? '',
+        category: post.category as PostCategory,
+        description: post.description,
+        draft: post.draft,
       };
     })
-    .filter((post) => !post.draft);
-
-  return posts.sort(
-    (a, b) => parseDate(b.date).getTime() - parseDate(a.date).getTime()
   );
+
+  return posts
+    .filter((p): p is PostMeta => p !== null && !p.draft)
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 
-export function getRecentPosts(count = 3): PostMeta[] {
-  return getAllPostMetas().slice(0, count);
+export async function getRecentPosts(count = 3): Promise<PostMeta[]> {
+  const posts = await getAllPostMetas();
+  return posts.slice(0, count);
 }
 
-export function getPostBySlug(slug: string): Post | null {
-  const filePath = path.join(BLOG_DIR, `${slug}.mdx`);
-  if (!fs.existsSync(filePath)) return null;
-
-  const raw = fs.readFileSync(filePath, "utf-8");
-  const { data, content } = matter(raw);
-
-  if (data.draft) return null;
+export async function getPostBySlug(slug: string): Promise<Post | null> {
+  const post = await reader.collections.posts.read(slug);
+  if (!post || post.draft) return null;
 
   return {
     slug,
-    title: data.title as string,
-    date: data.date as string,
-    category: data.category as PostCategory,
-    description: data.description as string,
-    draft: false,
-    content,
+    title: post.title,
+    date: post.date ?? '',
+    category: post.category as PostCategory,
+    description: post.description,
+    draft: post.draft,
+    content: post.content,
   };
 }
