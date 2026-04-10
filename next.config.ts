@@ -16,7 +16,13 @@ const nextConfig: NextConfig = {
   // 3. Allow LAN access for mobile device testing
   allowedDevOrigins: ['192.168.1.168'],
 
-  // 4. Leave experimental empty to avoid "Unrecognized key" terminal warnings
+  // 4. Tell Vercel's file tracer to bundle the content directory into serverless
+  //    functions (Keystatic reader uses fs at runtime, not static imports)
+  outputFileTracingIncludes: {
+    '/**': ['./src/content/blog/**'],
+  },
+
+  // 5. Leave experimental empty to avoid "Unrecognized key" terminal warnings
   experimental: {},
 
   async redirects() {
