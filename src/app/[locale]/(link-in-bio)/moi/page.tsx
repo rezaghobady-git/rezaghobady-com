@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react';
 import { useTranslations } from 'next-intl';
+import { getCalApi } from "@calcom/embed-react";
 import { HeroEditorial } from "./sections/HeroEditorial";
 import SocialLinks from "./sections/SocialLinks";
 
@@ -9,27 +10,10 @@ export default function MoiPage() {
     const t = useTranslations('Moi');
 
     useEffect(() => {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        if ((window as any).Cal) return;
-
-        // The full Cal.eu inline snippet must be injected as a real <script> element
-        // so the browser executes it correctly. It:
-        //   1. Creates window.Cal as a queue collector
-        //   2. Appends embed.js to <head> (which then processes the queue)
-        // After embed.js loads, Cal uses document-level event delegation to handle
-        // any [data-cal-link] click — no DOM scanning needed at init time.
-        const s = document.createElement('script');
-        s.textContent =
-            '(function(C,A,L){let p=function(a,ar){a.q.push(ar)};let d=C.document;' +
-            'C.Cal=C.Cal||function(){let cal=C.Cal;let ar=arguments;' +
-            'if(!cal.loaded){cal.ns={};cal.q=cal.q||[];' +
-            'd.head.appendChild(d.createElement("script")).src=A;cal.loaded=true;}' +
-            'if(ar[0]===L){const api=function(){p(api,arguments)};const namespace=ar[1];' +
-            'api.q=api.q||[];if(typeof namespace==="string"){' +
-            'cal.ns[namespace]=cal.ns[namespace]||api;p(cal.ns[namespace],ar);p(cal,[L,namespace,ar[2]]);}' +
-            'else p(cal,ar);return;}p(cal,ar);};})(window,"https://cal.eu/embed/embed.js","init");' +
-            'Cal("init",{origin:"https://cal.eu"});';
-        document.head.appendChild(s);
+        (async () => {
+            const cal = await getCalApi({ embedJsUrl: "https://cal.eu/embed/embed.js" });
+            cal("ui", { hideEventTypeDetails: false });
+        })();
     }, []);
 
     return (
