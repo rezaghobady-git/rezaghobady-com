@@ -1,12 +1,36 @@
 "use client";
 
+import { useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { HeroEditorial } from "./sections/HeroEditorial";
 import SocialLinks from "./sections/SocialLinks";
 
 export default function MoiPage() {
-    // 1. CALL HOOKS AT THE TOP
     const t = useTranslations('Moi');
+
+    useEffect(() => {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        if ((window as any).Cal) return;
+
+        // The full Cal.eu inline snippet must be injected as a real <script> element
+        // so the browser executes it correctly. It:
+        //   1. Creates window.Cal as a queue collector
+        //   2. Appends embed.js to <head> (which then processes the queue)
+        // After embed.js loads, Cal uses document-level event delegation to handle
+        // any [data-cal-link] click — no DOM scanning needed at init time.
+        const s = document.createElement('script');
+        s.textContent =
+            '(function(C,A,L){let p=function(a,ar){a.q.push(ar)};let d=C.document;' +
+            'C.Cal=C.Cal||function(){let cal=C.Cal;let ar=arguments;' +
+            'if(!cal.loaded){cal.ns={};cal.q=cal.q||[];' +
+            'd.head.appendChild(d.createElement("script")).src=A;cal.loaded=true;}' +
+            'if(ar[0]===L){const api=function(){p(api,arguments)};const namespace=ar[1];' +
+            'api.q=api.q||[];if(typeof namespace==="string"){' +
+            'cal.ns[namespace]=cal.ns[namespace]||api;p(cal.ns[namespace],ar);p(cal,[L,namespace,ar[2]]);}' +
+            'else p(cal,ar);return;}p(cal,ar);};})(window,"https://cal.eu/embed/embed.js","init");' +
+            'Cal("init",{origin:"https://cal.eu"});';
+        document.head.appendChild(s);
+    }, []);
 
     return (
         <div className="min-h-screen flex flex-col items-center pt-1 md:pt-6 pb-12 px-4 md:px-6"
@@ -54,6 +78,7 @@ export default function MoiPage() {
                 {/* CONTAINER 2: WORK WITH ME */}
                 <button
                     data-cal-link={t('booking.calLink')}
+                    data-cal-origin="https://cal.eu"
                     className="group flex items-center p-4 md:p-6 rounded-xl transition-all text-left border border-[var(--color-border)] hover:border-[var(--color-text-primary)] cursor-pointer"
                     style={{ backgroundColor: '#EAEAEA' }}
                 >
@@ -84,8 +109,7 @@ export default function MoiPage() {
                     </div>
 
                     {/* Right: Arrow */}
-                    <div className="w-8 h-8 md:w-10 md:h-10 min-w-[32px] rounded-full border border-[var(--color-border-strong)] flex items-center justify-center transition-all group-hover:bg-[var(--color-text-primary)] group-hover:text-white"
-                        style={{ color: 'var(--color-text-primary)' }}>
+                    <div className="w-8 h-8 md:w-10 md:h-10 min-w-[32px] rounded-full border border-[var(--color-border-strong)] flex items-center justify-center transition-all text-[var(--color-text-primary)] group-hover:bg-[var(--color-text-primary)] group-hover:text-white">
                         <svg className="w-3.5 h-3.5 md:w-[18px] md:h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M5 12h14M12 5l7 7-7 7" />
                         </svg>
