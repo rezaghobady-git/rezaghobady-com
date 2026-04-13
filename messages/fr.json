@@ -235,10 +235,10 @@
             "description": "Planifiez votre appel stratégique gratuit."
         },
         "article": {
-            "url": "/writing/ai-without-hype",
-            "label": "Dernières Publications",
-            "title": "L'IA sans le battage médiatique",
-            "description": "Ce qui fonctionne vraiment en automatisation IA — et ce qui ne fonctionne pas."
+            "url": "https://rezaghobady.com/",
+            "label": "Mon Site Web",
+            "title": "Apprenez-en davantage sur mes activités",
+            "description": "Automatisation IA clé en main pour les entreprises de services."
         }
     }
 }

@@ -1,10 +1,8 @@
 "use client";
-import { useEffect } from "react";
-import { getCalApi } from "@calcom/embed-react";
-import { useTranslations } from "next-intl"; // 1. Import the hook
+import { useTranslations } from "next-intl";
 
 export function HeroEditorial() {
-    const t = useTranslations('Moi'); // 2. Initialize the hook
+    const t = useTranslations('Moi');
 
     return (
         <section className="w-full flex flex-col items-center text-center mt-0 pt-3 md:pt-0">
@@ -23,10 +21,9 @@ export function HeroEditorial() {
                 Reza Ghobady
             </h1>
 
-            {/* BIO: Translated */}
             <p className="hero-bio max-w-[240px] md:max-w-md opacity-90 mx-auto"
                 style={{ color: 'var(--color-text-secondary)' }}>
-                {t('heroSubtitle')} {/* 3. Use the translation key */}
+                {t('heroSubtitle')}
             </p>
         </section>
     );
