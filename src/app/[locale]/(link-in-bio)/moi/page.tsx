@@ -37,7 +37,7 @@ export default function MoiPage() {
                     rel="noopener noreferrer"
                     className="group flex items-center p-4 md:p-6 border border-[var(--color-border)] rounded-xl transition-all hover:border-[var(--color-accent-warm)] bg-[var(--color-surface)]"
                 >
-                    <div className="w-[40px] h-[40px] md:w-[50px] md:h-[50px] min-w-[40px] md:min-w-[50px] bg-[var(--color-bg)] rounded-md flex items-center justify-center border border-[var(--color-border)]">
+                    <div className="w-[40px] h-[40px] md:w-[50px] md:h-[50px] min-w-[40px] md:min-w-[50px] bg-[var(--color-bg)] rounded-md flex items-center justify-center border border-[var(--color-border)] transition-all group-hover:bg-[var(--color-accent-warm)] group-hover:border-[var(--color-accent-warm)] group-hover:text-white">
                         <svg className="w-5 h-5 md:w-6 md:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /></svg>
                     </div>
                     <div className="flex-1 px-4 md:px-6 text-left">
@@ -65,7 +65,7 @@ export default function MoiPage() {
                     className="group flex items-center p-4 md:p-6 rounded-xl transition-all text-left border border-[var(--color-border)] hover:border-[var(--color-text-primary)] cursor-pointer w-full"
                     style={{ backgroundColor: '#EAEAEA' }}
                 >
-                    <div className="w-[40px] h-[40px] md:w-[50px] md:h-[50px] min-w-[40px] md:min-w-[50px] bg-black/5 rounded-md flex items-center justify-center text-[var(--color-text-primary)]">
+                    <div className="w-[40px] h-[40px] md:w-[50px] md:h-[50px] min-w-[40px] md:min-w-[50px] bg-black/5 rounded-md flex items-center justify-center text-[var(--color-text-primary)] transition-all group-hover:bg-[var(--color-accent-warm)] group-hover:text-white">
                         <svg className="w-5 h-5 md:w-6 md:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
                             <circle cx="9" cy="7" r="4" />
@@ -97,7 +97,7 @@ export default function MoiPage() {
                     rel="noopener noreferrer"
                     className="group flex items-center p-4 md:p-6 border border-[var(--color-border)] rounded-xl transition-all hover:border-[var(--color-accent-warm)] bg-[var(--color-surface)]"
                 >
-                    <div className="w-[40px] h-[40px] md:w-[50px] md:h-[50px] min-w-[40px] md:min-w-[50px] bg-[var(--color-bg)] rounded-md flex items-center justify-center text-[var(--color-text-primary)] border border-[var(--color-border)]">
+                    <div className="w-[40px] h-[40px] md:w-[50px] md:h-[50px] min-w-[40px] md:min-w-[50px] bg-[var(--color-bg)] rounded-md flex items-center justify-center text-[var(--color-text-primary)] border border-[var(--color-border)] transition-all group-hover:bg-[var(--color-accent-warm)] group-hover:border-[var(--color-accent-warm)] group-hover:text-white">
                         <svg className="w-5 h-5 md:w-6 md:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" /><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" /></svg>
                     </div>
                     <div className="flex-1 px-4 md:px-6 text-left">
