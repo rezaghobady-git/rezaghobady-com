@@ -230,9 +230,9 @@
         },
         "booking": {
             "calLink": "reza.ghobady/appel-strategie-30min",
-            "label": "Commencer une conversation",
-            "title": "Construisez votre système",
-            "description": "Planifiez votre appel stratégique gratuit."
+            "label": "Commencez ici",
+            "title": "Réservez un appel de 30 min. Repartez avec une feuille de route claire.",
+            "description": "Réservez un appel de 30 min. Repartez avec une feuille de route claire."
         },
         "article": {
             "url": "https://rezaghobady.com/",

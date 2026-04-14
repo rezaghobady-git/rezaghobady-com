@@ -76,10 +76,10 @@ export default function MoiPage() {
                         <span className="text-[9px] uppercase tracking-[0.2em] font-medium text-[var(--color-text-muted)]">
                             {t('booking.label')}
                         </span>
-                        <h2 className="text-lg md:text-[21px] font-serif leading-tight mt-0.5 md:mt-1 text-[var(--color-text-primary)]">
+                        <h2 className="text-lg md:text-[19px] font-serif leading-snug mt-0.5 md:mt-1 text-[var(--color-text-primary)]">
                             {t('booking.title')}
                         </h2>
-                        <p className="text-xs md:text-[13px] font-sans mt-0.5 md:mt-1 text-[var(--color-text-secondary)]">
+                        <p className="text-xs md:text-[13px] font-sans leading-snug mt-1 md:mt-1.5 text-[var(--color-text-secondary)]">
                             {t('booking.description')}
                         </p>
                     </div>
@@ -93,6 +93,8 @@ export default function MoiPage() {
                 {/* CONTAINER 3: LATEST ARTICLE */}
                 <a
                     href={t('article.url')}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="group flex items-center p-4 md:p-6 border border-[var(--color-border)] rounded-xl transition-all hover:border-[var(--color-accent-warm)] bg-[var(--color-surface)]"
                 >
                     <div className="w-[40px] h-[40px] md:w-[50px] md:h-[50px] min-w-[40px] md:min-w-[50px] bg-[var(--color-bg)] rounded-md flex items-center justify-center text-[var(--color-text-primary)] border border-[var(--color-border)]">

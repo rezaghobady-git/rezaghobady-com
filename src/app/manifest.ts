@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
         name: 'Reza Ghobady',
         short_name: 'Reza',
         description: 'AI, Automation, and Art',
-        start_url: '/QRCode', // Opens directly to your card
+        start_url: '/qr',
         display: 'standalone',
         background_color: '#1a1a1a',
         theme_color: '#1a1a1a',
@@ -19,12 +19,13 @@ export default function manifest(): MetadataRoute.Manifest {
                 src: '/icon-192.png',
                 sizes: '192x192',
                 type: 'image/png',
+                purpose: 'any',
             },
             {
                 src: '/icon-512.png',
                 sizes: '512x512',
                 type: 'image/png',
-                purpose: 'maskable', // This lets Android clip the icon to its preferred shape
+                purpose: 'maskable',
             },
         ],
     }
